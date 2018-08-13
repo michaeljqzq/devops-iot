@@ -1,0 +1,228 @@
+{
+  "groups": [
+    {
+      "id": "azure",
+      "name": "Azure",
+      "properties": {
+        "context": "service"
+      }
+    },
+    {
+      "id": "iotHub",
+      "name": "IoT Hub of Edge device",
+      "properties": {
+        "context": "service"
+      }
+    },
+    {
+      "id": "containerRegistry",
+      "name": "Container Registry",
+      "properties": {
+        "context": "service"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "subscriptionId",
+      "type": "string",
+      "description": "Id of subscription where IoT Hub will be created.",
+      "Name": "Subscription",
+      "inputMode": "AzureSubscription",
+      "groupId": "azure",
+      "isRequired": true,
+      "properties": {
+        "attributes": "primary;"
+      }
+    },
+    {
+      "id": "resourceGroup",
+      "type": "string",
+      "description": "Name of resource group which should contain IoT Hub.",
+      "Name": "Resource group",
+      "inputMode": "TextBox",
+      "groupId": "azure",
+      "isRequired": true,
+      "defaultValue": "resourcegroup1",
+      "staticValidation": {
+        "pattern": "[a-zA-Z0-9]*",
+        "errorMessage": "Resource group name should be all alpha-numerics",
+        "minLength": 3,
+        "maxLength": 15
+      }
+    },
+    {
+      "id": "iotHubName",
+      "type": "string",
+      "description": "Name of IoT Hub to be created",
+      "Name": "IoT Hub name",
+      "inputMode": "TextBox",
+      "groupId": "iotHub",
+      "isRequired": true,
+      "defaultValue": "IotHub1",
+      "properties": {
+        "attributes": "primary;"
+      },
+      "staticValidation": {
+        "pattern": "[a-zA-Z0-9\\-]*",
+        "errorMessage": "The value must contain only alphanumeric characters or the following: -",
+        "minLength": 3,
+        "maxLength": 15
+      },
+      "dynamicValidations": [
+        {
+          "dataSourceId": "checkIotHubAvailability",
+          "errorMessage": "IoT Hub with this name already exists"
+        }
+      ]
+    },
+    {
+      "id": "location",
+      "type": "string",
+      "description": "Location of the IoT Hub.",
+      "name": "Location",
+      "inputMode": "Combo",
+      "groupId": "iotHub",
+      "isRequired": true,
+      "dataSourceId": "iotHubLocations",
+      "defaultValue": "South Central US",
+      "properties": {
+        "attributes": "primary;"
+      }
+    },
+    {
+      "id": "iotHubSize",
+      "type": "string",
+      "description": "Details of cost and compute resource associated with the IoT Hub",
+      "name": "Pricing tier",
+      "inputMode": "Combo",
+      "groupId": "iotHub",
+      "isRequired": true,
+      "possibleValues": [
+        {
+          "value": "S1 Standard",
+          "displayValue": "S1 Standard"
+        },
+        {
+          "value": "S2 Standard",
+          "displayValue": "S2 Standard"
+        },
+        {
+          "value": "S3 Standard",
+          "displayValue": "S3 Standard"
+        },
+        {
+          "value": "B1 Basic",
+          "displayValue": "B1 Basic"
+        },
+        {
+          "value": "B2 Basic",
+          "displayValue": "B2 Basic"
+        },
+        {
+          "value": "B3 Basic",
+          "displayValue": "B3 Basic"
+        },
+        {
+          "value": "F1 Free",
+          "displayValue": "F1 Free https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling"
+        }
+      ],
+      "defaultValue": "S1 Standard",
+      "properties": {
+        "attributes": "summarizable;"
+      }
+    },
+    {
+      "id": "containerRegistryName",
+      "type": "string",
+      "name": "Container Registry Name",
+      "inputMode": "TextBox",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "defaultValue": "containerRegistry1",
+      "staticValidation": {
+        "pattern": "[a-zA-Z0-9]*",
+        "errorMessage": "Resource names may contain alpha numeric characters only and must be between 5 and 50 characters.",
+        "minLength": 5,
+        "maxLength": 50
+      },
+      "dynamicValidations": [
+        {
+          "dataSourceId": "checkContainerRegistryAvailability",
+          "errorMessage": "Registry with this name already exists"
+        }
+      ]
+    },
+    {
+      "id": "containerRegistrySKU",
+      "type": "string",
+      "description": "Azure Container Registry is a private Docker registry for hosting container images. All SKUs provide the same programmatic capabilities. Choosing a higher SKU will provide more performance and scale. <a href='https://azure.microsoft.com/en-us/pricing/details/container-registry/' target='_blank'>More info on pricing and capabilities.</a>",
+      "name": "Container Registry SKU",
+      "inputMode": "Combo",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "possibleValues": [
+        {
+          "value": "Basic",
+          "displayValue": "Basic"
+        },
+        {
+          "value": "Standard",
+          "displayValue": "Standard"
+        },
+        {
+          "value": "Premium",
+          "displayValue": "Premium"
+        }
+      ],
+      "defaultValue": "Standard"
+    },
+    {
+      "id": "containerRegistryLocation",
+      "type": "string",
+      "name": "Container Registry Location",
+      "inputMode": "Combo",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "dataSourceId": "containerRegistryLocation",
+      "defaultValue": "South Central US"
+    },
+    {
+      "id": "accessToken",
+      "type": "secureString",
+      "description": "AAD access token for VSTS.",
+      "inputMode": "AadAccessToken"
+    },
+    {
+      "id": "tenantId",
+      "type": "string",
+      "description": "AAD tenant id.",
+      "inputMode": "TenantId"
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "iotHubLocations",
+      "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.Devices?api-version=2018-02-01",
+      "resultSelector": "$.resourceTypes[?(@.resourceType === 'IotHubs')].locations"
+    },
+    {
+      "id": "containerRegistryLocation",
+      "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry?api-version=2016-09-01",
+      "resultSelector": "$.resourceTypes[?(@.resourceType === 'locations')].locations"
+    },
+    {
+      "id": "checkIotHubAvailability",
+      "endpointUrlStem": "/{{{inputs.subscriptionId}}}/providers/Microsoft.Devices/checkNameAvailability?api-version=2018-02-01",
+      "httpMethod": "POST",
+      "requestBody": "\\{\\\"name\\\":\\\"{{{inputs.iotHubName}}}\\\"\\}"
+    },
+    {
+      "id": "checkContainerRegistryAvailability",
+      "endpointUrlStem": "/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry/checkNameAvailability?api-version=2017-10-01",
+      "httpMethod": "POST",
+      "requestBody": "\\{\\\"name\\\":\\\"{{{inputs.containerRegistryName}}}\\\",\\\"type\\\":\\\"Microsoft.ContainerRegistry/registries\\\"\\}"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "groups": [
+    {
+      "id": "azure",
+      "name": "Azure",
+      "properties": {
+        "context": "service"
+      }
+    },
+    {
+      "id": "webApp",
+      "name": "Web App for Containers",
+      "properties": {
+        "context": "service"
+      }
+    },
+    {
+      "id": "containerRegistry",
+      "name": "Container Registry",
+      "properties": {
+        "context": "service"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "subscriptionId",
+      "type": "string",
+      "description": "Id of subscription where web app will be created.",
+      "Name": "Subscription",
+      "inputMode": "AzureSubscription",
+      "groupId": "azure",
+      "isRequired": true,
+      "properties": {
+        "attributes": "primary;"
+      }
+    },
+    {
+      "id": "resourceGroup",
+      "type": "string",
+      "description": "Name of resource group which should contain web app.",
+      "Name": "Resource group",
+      "inputMode": "TextBox",
+      "groupId": "azure",
+      "isRequired": true,
+      "defaultValue": "resourcegroup1",
+      "staticValidation": {
+        "pattern": "[a-zA-Z0-9]*",
+        "errorMessage": "Resource group name should be all alpha-numerics",
+        "minLength": 3,
+        "maxLength": 15
+      }
+    },
+    {
+      "id": "webAppName",
+      "type": "string",
+      "description": "Name of web app to be created",
+      "Name": "Web app name",
+      "inputMode": "TextBox",
+      "groupId": "webApp",
+      "isRequired": true,
+      "defaultValue": "webapp1",
+      "properties": {
+        "attributes": "primary;"
+      },
+      "staticValidation": {
+        "pattern": "[a-zA-Z0-9]*",
+        "errorMessage": "Web app name should be all alpha-numerics",
+        "minLength": 3,
+        "maxLength": 15
+      },
+      "dynamicValidations": [
+        {
+          "dataSourceId": "checkWebAppAvailability",
+          "errorMessage": "Web app with this name already exists"
+        }
+      ]
+    },
+    {
+      "id": "location",
+      "type": "string",
+      "description": "Location of the web app.",
+      "name": "Location",
+      "inputMode": "Combo",
+      "groupId": "webApp",
+      "isRequired": true,
+      "dataSourceId": "webAppLocations",
+      "defaultValue": "South Central US",
+      "properties": {
+        "attributes": "primary;"
+      }
+    },
+    {
+      "id": "appServicePlan",
+      "type": "string",
+      "description": "Details of cost and compute resource associated with the web app",
+      "name": "Pricing tier",
+      "inputMode": "Combo",
+      "groupId": "webApp",
+      "isRequired": true,
+      "possibleValues": [
+        {
+          "value": "S1 Standard",
+          "displayValue": "S1 Standard (1 Core, 1.75 GB RAM)"
+        },
+        {
+          "value": "S2 Standard",
+          "displayValue": "S2 Standard (2 Core, 3.5 GB RAM)"
+        },
+        {
+          "value": "S3 Standard",
+          "displayValue": "S3 Standard (4 Core, 7 GB RAM)"
+        },
+        {
+          "value": "B1 Basic",
+          "displayValue": "B1 Basic (1 Core, 1.75 GB RAM)"
+        },
+        {
+          "value": "B2 Basic",
+          "displayValue": "B2 Basic (2 Core, 3.5 GB RAM)"
+        },
+        {
+          "value": "B3 Basic",
+          "displayValue": "B3 Basic (4 Core, 7 GB RAM)"
+        }
+      ],
+      "defaultValue": "S1 Standard",
+      "properties": {
+        "attributes": "summarizable;"
+      }
+    },
+    {
+      "id": "appInsightLocation",
+      "type": "string",
+      "description": "Application insights location.",
+      "name": "Application Insights Location",
+      "inputMode": "Combo",
+      "groupId": "webApp",
+      "isRequired": true,
+      "dataSourceId": "appInsightsLocation",
+      "defaultValue": "South Central US"
+    },
+    {
+      "id": "containerRegistryName",
+      "type": "string",
+      "name": "Container Registry Name",
+      "inputMode": "TextBox",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "defaultValue": "containerRegistry1",
+      "staticValidation": {
+        "pattern": "[a-zA-Z0-9]*",
+        "errorMessage": "Resource names may contain alpha numeric characters only and must be between 5 and 50 characters.",
+        "minLength": 5,
+        "maxLength": 50
+      },
+      "dynamicValidations": [
+        {
+          "dataSourceId": "checkContainerRegistryAvailability",
+          "errorMessage": "Registry with this name already exists"
+        }
+      ]
+    },
+    {
+      "id": "containerRegistrySKU",
+      "type": "string",
+      "description": "Azure Container Registry is a private Docker registry for hosting container images. All SKUs provide the same programmatic capabilities. Choosing a higher SKU will provide more performance and scale. <a href='https://azure.microsoft.com/en-us/pricing/details/container-registry/' target='_blank'>More info on pricing and capabilities.</a>",
+      "name": "Container Registry SKU",
+      "inputMode": "Combo",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "possibleValues": [
+        {
+          "value": "Basic",
+          "displayValue": "Basic"
+        },
+        {
+          "value": "Standard",
+          "displayValue": "Standard"
+        },
+        {
+          "value": "Premium",
+          "displayValue": "Premium"
+        }
+      ],
+      "defaultValue": "Standard"
+    },
+    {
+      "id": "containerRegistryLocation",
+      "type": "string",
+      "name": "Container Registry Location",
+      "inputMode": "Combo",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "dataSourceId": "containerRegistryLocation",
+      "defaultValue": "South Central US"
+    },
+    {
+      "id": "accessToken",
+      "type": "secureString",
+      "description": "AAD access token for VSTS.",
+      "inputMode": "AadAccessToken"
+    },
+    {
+      "id": "tenantId",
+      "type": "string",
+      "description": "AAD tenant id.",
+      "inputMode": "TenantId"
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "webAppLocations",
+      "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.Web?api-version=2016-09-01",
+      "resultSelector": "$.resourceTypes[?(@.resourceType === 'sites')].locations"
+    },
+    {
+      "id": "appInsightsLocation",
+      "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/microsoft.insights?api-version=2016-09-01",
+      "resultSelector": "$.resourceTypes[?(@.resourceType === 'components')].locations"
+    },
+    {
+      "id": "containerRegistryLocation",
+      "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry?api-version=2016-09-01",
+      "resultSelector": "$.resourceTypes[?(@.resourceType === 'locations')].locations"
+    },
+    {
+      "id": "checkWebAppAvailability",
+      "endpointUrlStem": "/{{{inputs.subscriptionId}}}/providers/Microsoft.Web/ishostnameavailable/{{inputs.webAppName}}",
+      "httpMethod": "POST",
+      "requestBody": "\\{\\\"name\\\":\\\"{{{inputs.webAppName}}}\\\"\\}"
+    },
+    {
+      "id": "checkContainerRegistryAvailability",
+      "endpointUrlStem": "/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry/checkNameAvailability?api-version=2017-10-01",
+      "httpMethod": "POST",
+      "requestBody": "\\{\\\"name\\\":\\\"{{{inputs.containerRegistryName}}}\\\",\\\"type\\\":\\\"Microsoft.ContainerRegistry/registries\\\"\\}"
+    }
+  ]
+}

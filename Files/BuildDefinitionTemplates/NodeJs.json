@@ -1,0 +1,129 @@
+{
+  "id": "NodeJSWithVersion",
+  "name": "NodeJSWithVersion",
+  "category": "Build",
+  "iconTaskId": "FE47E961-9FA8-4106-8639-368C022D43AD",
+  "description": "Build NodeJS applications with versions",
+  "template": {
+    "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+    "process": {
+      "type": 1,
+      "phases": [
+        {
+          "steps": [
+            {
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "timeoutInMinutes": 0,
+              "displayName": "Use Node version",
+              "order": 0,
+              "inputs": {
+                "versionSpec": "6.9"
+              },
+              "task": {
+                "id": "31C75BBB-BCDF-4706-8D7C-4DA6A1959BC2",
+                "versionSpec": "0.*",
+                "definitionType": "task"
+              }
+            },
+            {
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "timeoutInMinutes": 0,
+              "displayName": "npm install",
+              "order": 1,
+              "inputs": {
+                "cwd": "app",
+                "command": "install",
+                "arguments": "--force"
+              },
+              "task": {
+                "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
+                "versionSpec": "0.*",
+                "definitionType": "task"
+              }
+            },
+            {
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "timeoutInMinutes": 0,
+              "displayName": "Archive files ",
+              "order": 2,
+              "inputs": {
+                "rootFolder": "$(System.DefaultWorkingDirectory)/app",
+                "includeRootFolder": "false",
+                "archiveType": "default",
+                "tarCompression": "gz",
+                "archiveFile": "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip",
+                "replaceExistingArchive": "true"
+              },
+              "task": {
+                "id": "d8b84976-e99a-4b86-b885-4849694435b0",
+                "versionSpec": "1.*",
+                "definitionType": "task"
+              }
+            },
+            {
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "displayName": "Copy ARM templates",
+              "timeoutInMinutes": 0,
+              "task": {
+                "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+                "versionSpec": "2.*",
+                "definitionType": "task"
+              },
+              "inputs": {
+                "SourceFolder": "armTemplates",
+                "Contents": "**",
+                "TargetFolder": "$(build.artifactstagingdirectory)",
+                "CleanTargetFolder": "false",
+                "OverWrite": "false",
+                "flattenFolders": "false"
+              }
+            },
+            {
+              "enabled": true,
+              "continueOnError": false,
+              "alwaysRun": false,
+              "timeoutInMinutes": 0,
+              "displayName": "Publish Artifact: drop",
+              "order": 4,
+              "inputs": {
+                "PathtoPublish": "$(Build.ArtifactStagingDirectory)",
+                "ArtifactName": "drop",
+                "ArtifactType": "Container",
+                "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+              },
+              "task": {
+                "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+                "definitionType": "task",
+                "versionSpec": "1.*"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "options": [],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "BuildConfiguration": {
+      "value": "release",
+      "allowOverride": true
+    },
+    "BuildPlatform": {
+      "value": "any cpu",
+      "allowOverride": true
+    }
+  },
+  "triggers": []
+}

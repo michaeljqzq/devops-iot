@@ -1,0 +1,79 @@
+{
+  "id": "6a8a6648-7f8d-60f9-a72b-31ecbb41cf24",
+  "name": "Run powershell script (Preview)",
+  "category": "Deployment",
+  "iconTaskId": "1b467810-6725-4b6d-accd-886174c09bba",
+  "description": "Run a Bash script",
+  "environment": {
+    "name": "Production",
+    "rank": 1,
+    "deployPhases": [
+      {
+        "deploymentInput": {
+          "healthPercent": 0,
+          "deploymentHealthOption": "Custom",
+          "tags": [],
+          "skipArtifactsDownload": true,
+          "artifactsDownloadInput": {
+            "downloadInputs": []
+          },
+          "queueId": 1,
+          "demands": [],
+          "enableAccessToken": false,
+          "timeoutInMinutes": 0,
+          "jobCancelTimeoutInMinutes": 1,
+          "condition": "succeeded()",
+          "overrideInputs": {}
+        },
+        "name": "Run on deployment group",
+        "phaseType": "machineGroupBasedDeployment",
+        "rank": 1,
+        "workflowTasks": [
+          {
+            "taskId": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b",
+            "version": "3.*",
+            "name": "Bash Script",
+            "refName": "",
+            "enabled": true,
+            "alwaysRun": false,
+            "continueOnError": false,
+            "timeoutInMinutes": 0,
+            "definitionType": "task",
+            "overrideInputs": {},
+            "condition": "succeeded()",
+            "inputs": {
+              "targetType": "inline",
+              "filePath": "",
+              "arguments": "",
+              "script": "echo \"Hello World\"",
+              "workingDirectory": "",
+              "failOnStderr": "false"
+            }
+          }
+        ]
+      }
+    ],
+    "deployStep": {
+      "tasks": []
+    },
+    "postDeployApprovals": {
+      "approvals": [
+        {
+          "isAutomated": true,
+          "rank": 1
+        }
+      ],
+      "approvalOptions": null
+    },
+    "preDeployApprovals": {
+      "approvals": [
+        {
+          "isAutomated": true,
+          "rank": 1
+        }
+      ],
+      "approvalOptions": null
+    },
+    "runOptions": {}
+  }
+}
