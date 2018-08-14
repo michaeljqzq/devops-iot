@@ -101,31 +101,31 @@
       "possibleValues": [
         {
           "value": "S1 Standard",
-          "displayValue": "S1 Standard"
+          "displayValue": "S1"
         },
         {
           "value": "S2 Standard",
-          "displayValue": "S2 Standard"
+          "displayValue": "S2"
         },
         {
           "value": "S3 Standard",
-          "displayValue": "S3 Standard"
+          "displayValue": "S3"ex
         },
         {
           "value": "B1 Basic",
-          "displayValue": "B1 Basic"
+          "displayValue": "B1"
         },
         {
           "value": "B2 Basic",
-          "displayValue": "B2 Basic"
+          "displayValue": "B2"
         },
         {
           "value": "B3 Basic",
-          "displayValue": "B3 Basic"
+          "displayValue": "B3"
         },
         {
           "value": "F1 Free",
-          "displayValue": "F1 Free https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling"
+          "displayValue": "F1 https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling"
         }
       ],
       "defaultValue": "S1 Standard",
