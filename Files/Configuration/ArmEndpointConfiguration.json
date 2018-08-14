@@ -1,0 +1,12 @@
+{
+  "assets": [
+    {
+      "id": "ARMEndpoint",
+      "type": "endpoint:AzureRM",
+      "inputs": {
+        "subscriptionId": "{{inputs.subscriptionId}}",
+        "authorization": "{{inputs.azureAuth}}"
+      }
+    }
+  ]
+}

@@ -22,7 +22,7 @@
 					{
 						"taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
 						"version": "2.*",
-						"name": "Azure Deployment:Create Azure App Service",
+						"name": "Azure Deployment:Create Azure IoT Hub",
 						"refName": "",
 						"enabled": true,
 						"alwaysRun": false,

@@ -13,24 +13,19 @@
     "BuiltIn",
     "MultiVersion"
   ],
-  "targets": [
-    {
-      "id": "Microsoft.VisualStudio.Services"
-    }
-  ],
-  "files": [
-    {
-      "path": "Files",
-      "addressable": true
-    }
-  ],
+  "targets": [{
+    "id": "Microsoft.VisualStudio.Services"
+  }],
+  "files": [{
+    "path": "Files",
+    "addressable": true
+  }],
   "eventCallbacks": {
     "versionCheck": {
       "uri": "{{DeploymentUrl \"0000003B-0000-8888-8000-000000000000\"}}_apis/public/extensions/vdisc"
     }
   },
-  "contributions": [
-    {
+  "contributions": [{
       "id": "aspnet-windowswebapp",
       "type": "ms.vss-continuous-delivery.pipeline-template-type",
       "targets": [
@@ -50,65 +45,48 @@
           ]
         },
         "configuration": {
-          "assets": {
-            "ARMResourceGroup": {
-              "type": "endpoint:AzureRM",
-              "inputs": {
-                "scope": "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
-                "subscriptionId": "{{inputs.subscriptionId}}",
-                "tenantId": "{{inputs.tenantId}}",
-                "accessToken": "{{{inputs.accessToken}}}"
-              }
-            }
-          },
+          "imports": [
+            "Files/Configuration/ArmEndpointConfiguration.json"
+          ],
           "source": {
             "repoFolderPath": "https://github.com/VSChina/iot-edge-sample-solution dotnet\\aspnet\\webapp\\application"
           },
           "buildDefinition": {
             "queue": "Hosted Linux Preview",
             "templateFile": "Files/BuildDefinitionTemplates/buildIoTEdge.json",
-            "phaseInputs": [
-              {
-                "taskInputs": [
-                  {
-                    "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                    "azureSubscriptionEndpoint": "{{{assets.ARMResourceGroup}}}",
-                    "azureContainerRegistry": "{\"loginServer\":\"{{{inputs.containerRegistryName}}}.azurecr.io\", \"id\" : \"/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.ContainerRegistry/registries/{{{inputs.containerRegistryName}}}\"}"
-                  }
-                ]
-              }
-            ]
+            "phaseInputs": [{
+              "taskInputs": [{
+                "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
+                "azureSubscriptionEndpoint": "{{{assets.ARMResourceGroup}}}",
+                "azureContainerRegistry": "{\"loginServer\":\"{{{inputs.containerRegistryName}}}.azurecr.io\", \"id\" : \"/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.ContainerRegistry/registries/{{{inputs.containerRegistryName}}}\"}"
+              }]
+            }]
           },
           "releaseDefinition": {
-            "environments": [
-              {
-                "name": "dev",
-                "deployedResourceIds": [
-                  "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
-                ],
-                "templateFile": "Files/ReleaseDefinitionTemplates/deployAzureAppService.json",
-                "phaseInputs": [
+            "environments": [{
+              "name": "dev",
+              "deployedResourceIds": [
+                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
+              ],
+              "templateFile": "Files/ReleaseDefinitionTemplates/deployAzureAppService.json",
+              "phaseInputs": [{
+                "queue": "Hosted Linux Preview",
+                "taskInputs": [{
+                    "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
+                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ResourceGroupName": "{{{inputs.resourceGroup}}}",
+                    "location": "{{{inputs.location}}}",
+                    "csmFile": "$(System.DefaultWorkingDirectory)/**/windows-webapp-template.json",
+                    "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -hostingPlanName {{{inputs.iotHubName}}}-plan -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -sku \"{{{inputs.appServicePlan}}}\""
+                  },
                   {
-                    "queue": "Hosted Linux Preview",
-                    "taskInputs": [
-                      {
-                        "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                        "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
-                        "ResourceGroupName": "{{{inputs.resourceGroup}}}",
-                        "location": "{{{inputs.location}}}",
-                        "csmFile": "$(System.DefaultWorkingDirectory)/**/windows-webapp-template.json",
-                        "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -hostingPlanName {{{inputs.iotHubName}}}-plan -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -sku \"{{{inputs.appServicePlan}}}\""
-                      },
-                      {
-                        "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                        "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
-                        "iothubname": "{{inputs.iotHubName}}"
-                      }
-                    ]
+                    "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
+                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "iothubname": "{{inputs.iotHubName}}"
                   }
                 ]
-              }
-            ]
+              }]
+            }]
           }
         }
       }
