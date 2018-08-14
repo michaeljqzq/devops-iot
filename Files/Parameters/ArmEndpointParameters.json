@@ -1,0 +1,65 @@
+{
+  "groups": [
+    {
+      "id": "azure",
+      "name": "Azure",
+      "properties": {
+        "context": "service"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "subscriptionId",
+      "type": "string",
+      "description": "Id of subscription where IoT Hub will be created.",
+      "Name": "Subscription",
+      "inputMode": "AzureSubscription",
+      "groupId": "azure",
+      "isRequired": true,
+      "properties": {
+        "attributes": "primary;"
+      }
+    },
+    {
+      "id": "resourceGroup",
+      "type": "string",
+      "description": "Name of resource group which should contain IoT Hub.",
+      "Name": "Resource group",
+      "inputMode": "TextBox",
+      "groupId": "azure",
+      "isRequired": true,
+      "defaultValue": "resourcegroup1",
+      "staticValidation": {
+        "pattern": "[a-zA-Z0-9]*",
+        "errorMessage": "Resource group name should be all alpha-numerics",
+        "minLength": 3,
+        "maxLength": 15
+      }
+    },
+    {
+      "id": "location",
+      "type": "string",
+      "description": "Location of the IoT Hub.",
+      "name": "Location",
+      "inputMode": "Combo",
+      "groupId": "iotHub",
+      "isRequired": true,
+      "dataSourceId": "iotHubLocations",
+      "defaultValue": "South Central US",
+      "properties": {
+        "attributes": "primary;"
+      }
+    },
+    {
+      "id": "azureAuth",
+      "type": "authorization",
+      "description": "Authorization for Azure ARM endpoints.",
+      "inputMode": "None",
+      "properties": {
+        "scope": "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
+        "location": "{{{inputs.location}}}"
+      }
+    }
+  ]
+}

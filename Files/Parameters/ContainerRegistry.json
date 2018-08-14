@@ -1,0 +1,93 @@
+{
+  "groups": [
+    {
+      "id": "containerRegistry",
+      "name": "Container Registry",
+      "properties": {
+        "context": "service"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "containerRegistryName",
+      "type": "string",
+      "name": "Container Registry Name",
+      "inputMode": "TextBox",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "defaultValue": "containerRegistry1",
+      "staticValidation": {
+        "pattern": "[a-zA-Z0-9]*",
+        "errorMessage": "Resource names may contain alpha numeric characters only and must be between 5 and 50 characters.",
+        "minLength": 5,
+        "maxLength": 50
+      },
+      "dynamicValidations": [
+        {
+          "dataSourceId": "checkContainerRegistryAvailability",
+          "errorMessage": "Registry with this name already exists"
+        }
+      ]
+    },
+    {
+      "id": "containerRegistrySKU",
+      "type": "string",
+      "description": "Azure Container Registry is a private Docker registry for hosting container images. All SKUs provide the same programmatic capabilities. Choosing a higher SKU will provide more performance and scale. <a href='https://azure.microsoft.com/en-us/pricing/details/container-registry/' target='_blank'>More info on pricing and capabilities.</a>",
+      "name": "Container Registry SKU",
+      "inputMode": "Combo",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "possibleValues": [
+        {
+          "value": "Basic",
+          "displayValue": "Basic"
+        },
+        {
+          "value": "Standard",
+          "displayValue": "Standard"
+        },
+        {
+          "value": "Premium",
+          "displayValue": "Premium"
+        }
+      ],
+      "defaultValue": "Standard"
+    },
+    {
+      "id": "containerRegistryLocation",
+      "type": "string",
+      "name": "Container Registry Location",
+      "inputMode": "Combo",
+      "groupId": "containerRegistry",
+      "isRequired": true,
+      "dataSourceId": "containerRegistryLocation",
+      "defaultValue": "South Central US"
+    },
+    {
+      "id": "accessToken",
+      "type": "secureString",
+      "description": "AAD access token for VSTS.",
+      "inputMode": "AadAccessToken"
+    },
+    {
+      "id": "tenantId",
+      "type": "string",
+      "description": "AAD tenant id.",
+      "inputMode": "TenantId"
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "containerRegistryLocation",
+      "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry?api-version=2016-09-01",
+      "resultSelector": "$.resourceTypes[?(@.resourceType === 'locations')].locations"
+    },
+    {
+      "id": "checkContainerRegistryAvailability",
+      "endpointUrlStem": "/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry/checkNameAvailability?api-version=2017-10-01",
+      "httpMethod": "POST",
+      "requestBody": "\\{\\\"name\\\":\\\"{{{inputs.containerRegistryName}}}\\\",\\\"type\\\":\\\"Microsoft.ContainerRegistry/registries\\\"\\}"
+    }
+  ]
+}

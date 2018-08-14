@@ -41,6 +41,8 @@
         },
         "parameters": {
           "imports": [
+            "Files/Parameters/ArmEndpointParameters.json",
+            "Files/Parameters/ContainerRegistry.json",
             "Files/Parameters/IoTHub.json"
           ]
         },
@@ -76,8 +78,8 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.location}}}",
-                    "csmFile": "$(System.DefaultWorkingDirectory)/**/windows-webapp-template.json",
-                    "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -hostingPlanName {{{inputs.iotHubName}}}-plan -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -sku \"{{{inputs.appServicePlan}}}\""
+                    "csmFile": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
                     "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
