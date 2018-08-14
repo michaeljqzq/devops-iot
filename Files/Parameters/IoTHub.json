@@ -1,15 +1,12 @@
 {
-  "groups": [
-    {
-      "id": "iotHub",
-      "name": "IoT Hub of Edge device",
-      "properties": {
-        "context": "service"
-      }
+  "groups": [{
+    "id": "iotHub",
+    "name": "IoT Hub of Edge device",
+    "properties": {
+      "context": "service"
     }
-  ],
-  "inputs": [
-    {
+  }],
+  "inputs": [{
       "id": "iotHubName",
       "type": "string",
       "description": "Name of IoT Hub to be created",
@@ -27,12 +24,10 @@
         "minLength": 3,
         "maxLength": 15
       },
-      "dynamicValidations": [
-        {
-          "dataSourceId": "checkIotHubAvailability",
-          "errorMessage": "IoT Hub with this name already exists"
-        }
-      ]
+      "dynamicValidations": [{
+        "dataSourceId": "checkIotHubAvailability",
+        "errorMessage": "IoT Hub with this name already exists"
+      }]
     },
     {
       "id": "iotHubSku",
@@ -42,8 +37,7 @@
       "inputMode": "Combo",
       "groupId": "iotHub",
       "isRequired": true,
-      "possibleValues": [
-        {
+      "possibleValues": [{
           "value": "S1 Standard",
           "displayValue": "S1"
         },
@@ -90,8 +84,7 @@
       "inputMode": "TenantId"
     }
   ],
-  "dataSources": [
-    {
+  "dataSources": [{
       "id": "iotHubLocations",
       "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.Devices?api-version=2018-02-01",
       "resultSelector": "$.resourceTypes[?(@.resourceType === 'IotHubs')].locations"

@@ -1,15 +1,12 @@
 {
-  "groups": [
-    {
-      "id": "azure",
-      "name": "Azure",
-      "properties": {
-        "context": "service"
-      }
+  "groups": [{
+    "id": "azure",
+    "name": "Azure",
+    "properties": {
+      "context": "service"
     }
-  ],
-  "inputs": [
-    {
+  }],
+  "inputs": [{
       "id": "subscriptionId",
       "type": "string",
       "description": "Id of subscription where IoT Hub will be created.",

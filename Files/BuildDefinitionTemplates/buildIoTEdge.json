@@ -1,71 +1,64 @@
 {
-	"id": "IoTEdgeBuild",
-	"name": "Azure IoT Edge Build Modules",
-	"category": "Build",
-	"iconTaskId": "71a9a2d3-a98a-4caa-96ab-affca411ecda",
-	"description": "Build Azure IoT Edge Modules",
-	"template": {
-		"buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
-		"process": {
-			"type": 1,
-			"phases": [
-				{
-					"steps": [
-						{
-              "environment": {},
-              "enabled": true,
-              "continueOnError": false,
-              "alwaysRun": false,
-              "displayName": "Azure IoT Edge - Build and Push modules",
-              "timeoutInMinutes": 0,
-              "condition": "succeeded()",
-              "task": {
-                "id": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                "versionSpec": "1.*",
-                "definitionType": "task"
-              },
-              "inputs": {
-                "action": "Build and Push modules",
-                "connectedServiceNameARM": "",
-                "iothubname": "",
-                "deploymentid": "devops-iotedge-deployment",
-                "priority": "0",
-                "deviceOption": "",
-                "deviceId": "",
-                "targetcondition": "",
-                "moduleJsons": "**/module.json",
-                "containerregistrytype": "Azure Container Registry",
-                "nugetFeed": "",
-                "dockerRegistryEndpoint": "",
-                "azureSubscriptionEndpoint": "",
-                "azureContainerRegistry": "",
-                "dockerHostEndpoint": "",
-                "rootPath": "./"
-              }
-            }
-					]
-				}
-			]
-		},
-		"options": [
-			{
-				"definition": {
-					"id": "5D58CC01-7C75-450C-BE18-A388DDB129EC"
-				},
-				"enabled": true,
-				"inputs": {
-				}
-			}
-		],
-		"variables": {
-			"system.debug": {
-				"value": "false",
-				"allowOverride": true
-			}
-		},
-		"triggers": [],
-		"processParameters": {
-			
-		}
-	}
+  "id": "IoTEdgeBuild",
+  "name": "Azure IoT Edge Build Modules",
+  "category": "Build",
+  "iconTaskId": "71a9a2d3-a98a-4caa-96ab-affca411ecda",
+  "description": "Build Azure IoT Edge Modules",
+  "template": {
+    "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+    "process": {
+      "type": 1,
+      "phases": [{
+        "steps": [{
+          "environment": {},
+          "enabled": true,
+          "continueOnError": false,
+          "alwaysRun": false,
+          "displayName": "Azure IoT Edge - Build and Push modules",
+          "timeoutInMinutes": 0,
+          "condition": "succeeded()",
+          "task": {
+            "id": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
+            "versionSpec": "1.*",
+            "definitionType": "task"
+          },
+          "inputs": {
+            "action": "Build and Push modules",
+            "connectedServiceNameARM": "",
+            "iothubname": "",
+            "deploymentid": "devops-iotedge-deployment",
+            "priority": "0",
+            "deviceOption": "",
+            "deviceId": "",
+            "targetcondition": "",
+            "moduleJsons": "**/module.json",
+            "containerregistrytype": "Azure Container Registry",
+            "nugetFeed": "",
+            "dockerRegistryEndpoint": "",
+            "azureSubscriptionEndpoint": "",
+            "azureContainerRegistry": "",
+            "dockerHostEndpoint": "",
+            "rootPath": "./"
+          }
+        }]
+      }]
+    },
+    "options": [{
+      "definition": {
+        "id": "5D58CC01-7C75-450C-BE18-A388DDB129EC"
+      },
+      "enabled": true,
+      "inputs": {}
+    }],
+    "variables": {
+      "system.debug": {
+        "value": "false",
+        "allowOverride": true
+      }
+    },
+    "triggers": [],
+    "processParameters": {
+
+    }
+  }
 }

@@ -1,15 +1,12 @@
 {
-  "groups": [
-    {
-      "id": "containerRegistry",
-      "name": "Container Registry",
-      "properties": {
-        "context": "service"
-      }
+  "groups": [{
+    "id": "containerRegistry",
+    "name": "Container Registry",
+    "properties": {
+      "context": "service"
     }
-  ],
-  "inputs": [
-    {
+  }],
+  "inputs": [{
       "id": "containerRegistryName",
       "type": "string",
       "name": "Container Registry Name",
@@ -23,12 +20,10 @@
         "minLength": 5,
         "maxLength": 50
       },
-      "dynamicValidations": [
-        {
-          "dataSourceId": "checkContainerRegistryAvailability",
-          "errorMessage": "Registry with this name already exists"
-        }
-      ]
+      "dynamicValidations": [{
+        "dataSourceId": "checkContainerRegistryAvailability",
+        "errorMessage": "Registry with this name already exists"
+      }]
     },
     {
       "id": "containerRegistrySKU",
@@ -38,8 +33,7 @@
       "inputMode": "Combo",
       "groupId": "containerRegistry",
       "isRequired": true,
-      "possibleValues": [
-        {
+      "possibleValues": [{
           "value": "Basic",
           "displayValue": "Basic"
         },
@@ -77,8 +71,7 @@
       "inputMode": "TenantId"
     }
   ],
-  "dataSources": [
-    {
+  "dataSources": [{
       "id": "containerRegistryLocation",
       "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry?api-version=2016-09-01",
       "resultSelector": "$.resourceTypes[?(@.resourceType === 'locations')].locations"
