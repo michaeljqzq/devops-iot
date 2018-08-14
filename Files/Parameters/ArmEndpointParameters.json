@@ -38,7 +38,7 @@
       }
     },
     {
-      "id": "location",
+      "id": "iotHubLocation",
       "type": "string",
       "description": "Location of the IoT Hub.",
       "name": "Location",
@@ -58,7 +58,7 @@
       "inputMode": "None",
       "properties": {
         "scope": "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
-        "location": "{{{inputs.location}}}"
+        "location": "{{{inputs.iotHubLocation}}}"
       }
     }
   ]

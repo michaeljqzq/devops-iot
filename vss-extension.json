@@ -77,9 +77,13 @@
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
-                    "location": "{{{inputs.location}}}",
+                    "location": "{{{inputs.iotHubLocation}}}",
                     "csmFile": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
+                  },
+                  {
+                    "__TaskId__": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}"
                   },
                   {
                     "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
