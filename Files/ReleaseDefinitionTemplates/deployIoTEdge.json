@@ -69,7 +69,7 @@
             "connectedServiceNameARM": "",
             "scriptLocation": "inlineScript",
             "scriptPath": "",
-            "inlineScript": "az extension add --name azure-cli-iot-ext && az iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled",
+            "inlineScript": "az extension add --name azure-cli-iot-ext &&\r\naz iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled\r\nTMP_OUTPUT=\"$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}})\" &&\r\nRE=\"\\\"cs\\\":\\s?\\\"(.*)\\\"\" &&\r\nif [[ $TMP_OUTPUT =~ $RE ]]; then CS_OUTPUT=${BASH_REMATCH[1]}; fi &&\r\necho \"##vso[task.setvariable variable=CS_OUTPUT]${CS_OUTPUT}\"",
             "args": "",
             "cwd": "",
             "failOnStandardError": "false"
