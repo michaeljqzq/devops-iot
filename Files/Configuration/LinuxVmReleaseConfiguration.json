@@ -27,7 +27,7 @@
             "ResourceGroupName": "{{{inputs.resourceGroup}}}",
             "location": "{{{inputs.vmlocation}}}",
             "csmFile": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-linux-vm.json",
-            "overrideParameters": "-virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" ",
+            "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" ",
             "deploymentGroupEndpoint": "{{{assets.ExternalTfsEndpoint}}}",
             "project": "{{{system.project}}}",
             "deploymentGroupName": "{{inputs.vmName}}-dg"
