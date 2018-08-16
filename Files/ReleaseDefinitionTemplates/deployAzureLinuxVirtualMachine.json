@@ -1,0 +1,87 @@
+{
+  "id": "D9D87E07-2859-4172-A110-07B3D85547F0",
+  "name": "Deploy application to Azure Virtual Machine (Preview)",
+  "category": "Deployment",
+  "iconTaskId": "1b467810-6725-4b6d-accd-886174c09bba",
+  "description": "Deploy your application to azure virtual machine.",
+  "environment": {
+    "name": "",
+    "rank": 1,
+    "deployPhases": [{
+        "deploymentInput": {
+          "parallelExecution": {
+            "parallelExecutionType": "none"
+          },
+          "skipArtifactsDownload": false,
+          "artifactsDownloadInput": {
+            "downloadInputs": []
+          },
+          "queueId": 1,
+          "demands": [],
+          "enableAccessToken": false,
+          "timeoutInMinutes": 0,
+          "jobCancelTimeoutInMinutes": 1,
+          "condition": "succeeded()",
+          "overrideInputs": {}
+        },
+        "rank": 1,
+        "phaseType": "agentBasedDeployment",
+        "name": "Agent phase",
+        "workflowTasks": [{
+          "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+          "version": "2.*",
+          "name": "Azure Deployment: Create Azure Resources",
+          "refName": "",
+          "enabled": true,
+          "alwaysRun": false,
+          "continueOnError": false,
+          "timeoutInMinutes": 0,
+          "definitionType": "task",
+          "overrideInputs": {},
+          "condition": "succeeded()",
+          "inputs": {
+            "ConnectedServiceName": "",
+            "action": "Create Or Update Resource Group",
+            "resourceGroupName": "",
+            "location": "",
+            "templateLocation": "Linked artifact",
+            "csmFileLink": "",
+            "csmParametersFileLink": "",
+            "csmFile": "",
+            "csmParametersFile": "",
+            "overrideParameters": "",
+            "deploymentMode": "Incremental",
+            "enableDeploymentPrerequisites": "ConfigureVMWithDGAgent",
+            "deploymentGroupEndpoint": "",
+            "project": "",
+            "deploymentGroupName": "",
+            "copyAzureVMTags": "true",
+            "runAgentServiceAsUser": "false",
+            "userName": "",
+            "password": "",
+            "outputVariable": "",
+            "deploymentOutputs": ""
+          }
+        }]
+      }
+    ],
+    "deployStep": {
+      "tasks": []
+    },
+    "preDeployApprovals": {
+      "approvals": [{
+        "isAutomated": true,
+        "rank": 1
+      }],
+      "approvalOptions": null
+    },
+    "postDeployApprovals": {
+      "approvals": [{
+        "isAutomated": true,
+        "rank": 1
+      }],
+      "approvalOptions": null
+    },
+    "runOptions": {}
+  }
+}

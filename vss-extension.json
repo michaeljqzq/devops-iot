@@ -49,7 +49,8 @@
         "configuration": {
           "imports": [
             "Files/Configuration/ArmEndpointConfiguration.json",
-            "Files/Configuration/VmCiCdConfiguration.json"
+            "Files/Configuration/VmCiCdConfiguration.json",
+            "Files/Configuration/LinuxVmReleaseConfiguration.json"
           ],
           "source": {
             "repoFolderPath": "https://github.com/VSChina/iot-edge-sample-solution dotnet\\aspnet\\webapp\\application"
