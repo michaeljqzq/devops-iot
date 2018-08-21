@@ -3,15 +3,10 @@
   "extensionId": "vss-continuous-delivery-pipeline-templates",
   "name": "Zhiqing Pipeline templates extension for continuous delivery",
   "publisher": "michaeljqzq",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Zhiqing Pipeline template contributions for creating CI/CD pipelines",
   "categories": [
     "Integrate"
-  ],
-  "galleryFlags": [
-    "System",
-    "BuiltIn",
-    "MultiVersion"
   ],
   "targets": [{
     "id": "Microsoft.VisualStudio.Services"
@@ -53,7 +48,10 @@
             "Files/Configuration/LinuxVmReleaseConfiguration.json"
           ],
           "source": {
-            "repoFolderPath": "https://github.com/VSChina/iot-edge-sample-solution dotnet\\aspnet\\webapp\\application"
+            "repository": {
+              "id": "https://github.com/VSChina/iot-edge-sample-solution",
+              "defaultBranch": "master"
+            }
           },
           "buildDefinition": {
             "queue": "Hosted Linux Preview",
