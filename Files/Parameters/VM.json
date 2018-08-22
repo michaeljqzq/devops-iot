@@ -1,6 +1,6 @@
 {
   "groups": [{
-    "id": "vm",
+    "id": "virtualMachine",
     "name": "VM as simulated Edge device",
     "properties": {
       "context": "service"
@@ -29,7 +29,7 @@
       "id": "vmUsername",
       "type": "string",
       "description": "Username of virtual machine to be created",
-      "Name": "User name",
+      "Name": "Virtual machine User name",
       "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
@@ -47,7 +47,7 @@
     {
       "id": "vmPassword",
       "type": "securestring",
-      "description": "Passowrd of virtual machine to be created",
+      "description": "Password of virtual machine to be created",
       "Name": "Password",
       "inputMode": "PasswordBox",
       "groupId": "virtualMachine",
@@ -89,10 +89,7 @@
       "groupId": "virtualMachine",
       "isRequired": true,
       "dataSourceId": "virtualMachineLocations",
-      "defaultValue": "South Central US",
-      "properties": {
-        "attributes": "primary;"
-      }
+      "defaultValue": "South Central US"
     },
     {
       "id": "vmSize",

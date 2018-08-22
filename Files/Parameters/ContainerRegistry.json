@@ -14,6 +14,9 @@
       "groupId": "containerRegistry",
       "isRequired": true,
       "defaultValue": "containerRegistry1",
+      "properties": {
+        "attributes": "primary;"
+      },
       "staticValidation": {
         "pattern": "[a-zA-Z0-9]*",
         "errorMessage": "Resource names may contain alpha numeric characters only and must be between 5 and 50 characters.",
@@ -46,7 +49,7 @@
           "displayValue": "Premium"
         }
       ],
-      "defaultValue": "Standard"
+      "defaultValue": "Basic"
     },
     {
       "id": "containerRegistryLocation",
