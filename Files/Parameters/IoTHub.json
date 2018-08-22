@@ -72,6 +72,20 @@
       }
     },
     {
+      "id": "iotHubLocation",
+      "type": "string",
+      "description": "Location of the IoT Hub.",
+      "name": "Location",
+      "inputMode": "Combo",
+      "groupId": "iotHub",
+      "isRequired": true,
+      "dataSourceId": "iotHubLocations",
+      "defaultValue": "South Central US",
+      "properties": {
+        "attributes": "primary;"
+      }
+    },
+    {
       "id": "accessToken",
       "type": "secureString",
       "description": "AAD access token for VSTS.",
