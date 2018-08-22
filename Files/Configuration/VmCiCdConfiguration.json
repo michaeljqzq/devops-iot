@@ -1,61 +1,52 @@
 {
-    "assets": [
-        {
-            "id": "DeploymentGroup",
-            "type": "DeploymentGroup",
-            "inputs": {
-                "deploymentGroupName": "{{inputs.vmName}}-dg"
-            }
-        },
-        {
-            "id": "PatToken",
-            "type": "PersonalAccessToken",
-            "inputs": {
-                "scope": "vso.machinegroup_manage",
-                "validityInMinutes": "60",
-                "tokenName": "VM Continuous Delivery - Deployment Group"
-            }
-        },
-        {
-            "id": "VmExtension",
-            "type": "TeamServicesAgentVMExtension",
-            "inputs": {
-                "vmUri": "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}",
-                "deploymentGroupName": "{{inputs.deploymentGroupName}}",
-                "location": "{{inputs.vmlocation}}",
-                "tags": "",
-                "token": "{{assets.PatToken}}",
-                "osType": "Linux",
-                "vmName": "{{inputs.vmName}}",
-                "tenantId": "{{inputs.tenantId}}",
-                "accessToken": "{{inputs.accessToken}}"
-            }
-        }
-    ],
-    "source": null,
-    "buildDefinition": null,
-    "releaseDefinition": {
-        "environments": [
-            {
-                "name": "dev",
-                "deployedResourceIds": [
-                    "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}"
-                ],
-                "templateFile": "Files/ReleaseDefinitionTemplates/deployDeploymentGroupWithLinuxVirtualMachine.json",
-                "phaseInputs": [
-                    {
-                        "queue": "{{assets.DeploymentGroup}}",
-                        "deploymentInputs": {
-                            "tags": ""
-                        },
-                        "taskInputs": [
-                            {
-                                "__TaskId__": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+  "assets": {
+    "DeploymentGroup": {
+      "type": "DeploymentGroup",
+      "inputs": {
+        "deploymentGroupName": "{{inputs.vmName}}-dg"
+      }
+    },
+    "PatToken": {
+      "type": "PersonalAccessToken",
+      "inputs": {
+        "scope": "vso.machinegroup_manage",
+        "validityInMinutes": "60",
+        "tokenName": "VM Continuous Delivery - Deployment Group"
+      }
+    },
+    "VmExtension": {
+      "type": "TeamServicesAgentVMExtension",
+      "inputs": {
+        "vmUri": "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}",
+        "deploymentGroupName": "{{inputs.deploymentGroupName}}",
+        "location": "{{inputs.vmlocation}}",
+        "tags": "",
+        "token": "{{assets.PatToken}}",
+        "osType": "Linux",
+        "vmName": "{{inputs.vmName}}",
+        "tenantId": "{{inputs.tenantId}}",
+        "accessToken": "{{inputs.accessToken}}"
+      }
     }
+  },
+  "source": null,
+  "buildDefinition": null,
+  "releaseDefinition": {
+    "environments": [{
+      "name": "dev",
+      "deployedResourceIds": [
+        "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}"
+      ],
+      "templateFile": "Files/ReleaseDefinitionTemplates/deployDeploymentGroupWithLinuxVirtualMachine.json",
+      "phaseInputs": [{
+        "queue": "{{assets.DeploymentGroup}}",
+        "deploymentInputs": {
+          "tags": ""
+        },
+        "taskInputs": [{
+          "__TaskId__": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b"
+        }]
+      }]
+    }]
+  }
 }

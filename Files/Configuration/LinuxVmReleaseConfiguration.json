@@ -1,11 +1,12 @@
 {
-  "assets": [{
-    "id": "ExternalTfsEndpoint",
-    "type": "endpoint:ExternalTfs",
-    "inputs": {
-      "token": "{{assets.PatToken}}"
+  "assets": {
+    "ExternalTfsEndpoint": {
+      "type": "endpoint:ExternalTfs",
+      "inputs": {
+        "token": "{{assets.PatToken}}"
+      }
     }
-  }],
+  },
   "releaseDefinition": {
     "environments": [{
       "name": "dev",
