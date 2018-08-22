@@ -116,18 +116,6 @@
         "value": "Linux",
         "displayValue": "Linux"
       }]
-    },
-    {
-      "id": "accessToken",
-      "type": "secureString",
-      "description": "AAD access token for VSTS.",
-      "inputMode": "AadAccessToken"
-    },
-    {
-      "id": "tenantId",
-      "type": "string",
-      "description": "AAD tenant id.",
-      "inputMode": "TenantId"
     }
   ],
   "dataSources": [{
