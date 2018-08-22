@@ -33,7 +33,8 @@
           "imports": [
             "Files/Parameters/ArmEndpointParameters.json",
             "Files/Parameters/ContainerRegistry.json",
-            "Files/Parameters/IoTHub.json"
+            "Files/Parameters/IoTHub.json",
+            "Files/Parameters/VM.json"
           ]
         },
         "configuration": {

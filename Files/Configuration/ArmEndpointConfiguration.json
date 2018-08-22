@@ -3,8 +3,11 @@
     "ARMResourceGroup": {
       "type": "endpoint:AzureRM",
       "inputs": {
+        "scope": "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
         "subscriptionId": "{{inputs.subscriptionId}}",
-        "authorization": "{{inputs.azureAuth}}"
+        "tenantId": "{{inputs.tenantId}}",
+        "accessToken": "{{{inputs.accessToken}}}"
       }
     }
   }
+}

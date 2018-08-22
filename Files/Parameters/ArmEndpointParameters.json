@@ -45,16 +45,6 @@
       "type": "string",
       "description": "AAD tenant id.",
       "inputMode": "TenantId"
-    },
-    {
-      "id": "azureAuth",
-      "type": "authorization",
-      "description": "Authorization for Azure ARM endpoints.",
-      "inputMode": "None",
-      "properties": {
-        "scope": "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
-        "location": "{{{inputs.iotHubLocation}}}"
-      }
     }
   ]
 }
