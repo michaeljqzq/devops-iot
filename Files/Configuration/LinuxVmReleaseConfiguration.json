@@ -19,7 +19,7 @@
           "isSecret": true
         }
       },
-      "templateFile": "Files/ReleaseDefinitionTemplates/deployAzureWindowsVirtualMachine.json",
+      "templateFile": "Files/ReleaseDefinitionTemplates/deployAzureLinuxVirtualMachine.json",
       "phaseInputs": [{
           "queue": "Hosted Linux Preview",
           "taskInputs": [{
