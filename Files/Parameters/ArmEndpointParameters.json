@@ -21,12 +21,15 @@
     {
       "id": "resourceGroup",
       "type": "string",
-      "description": "Name of resource group which should contain IoT Hub.",
+      "description": "Name of resource group which should the provisioned resources.",
       "Name": "Resource group",
       "inputMode": "TextBox",
       "groupId": "azure",
       "isRequired": true,
-      "defaultValue": "resourcegroup1",
+      "defaultValue": "devops-iotedge",
+      "properties": {
+        "attributes": "primary;"
+      },
       "staticValidation": {
         "pattern": "[a-zA-Z0-9]*",
         "errorMessage": "Resource group name should be all alpha-numerics",

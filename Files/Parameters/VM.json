@@ -14,7 +14,7 @@
       "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "vm1",
+      "defaultValue": "edge-vm",
       "properties": {
         "attributes": "primary;"
       },
@@ -99,7 +99,11 @@
       "inputMode": "Combo",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "Standard_A0"
+      "defaultValue": "Standard_A0",
+      "possibleValues": [{
+        "value": "Standard_A0",
+        "displayValue": "A0 Standard"
+      }]
     },
     {
       "id": "vmOs",
