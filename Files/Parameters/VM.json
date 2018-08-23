@@ -19,8 +19,8 @@
         "attributes": "primary;"
       },
       "staticValidation": {
-        "pattern": "^(?![0-9]*$)[a-zA-Z0-9]+$",
-        "errorMessage": "Virtual machine name should be alpha-numeric and should not be only numeric",
+        "pattern": "^(?![0-9]*$)[a-zA-Z0-9\\-]+$",
+        "errorMessage": "Virtual machine name should be alpha-numeric or '-' and should not be only numeric",
         "minLength": 1,
         "maxLength": 15
       }
