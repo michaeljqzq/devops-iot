@@ -49,7 +49,7 @@
       "type": "securestring",
       "description": "Password of virtual machine to be created",
       "Name": "Password",
-      "inputMode": "PasswordBox",
+      "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
       "properties": {
@@ -67,7 +67,7 @@
       "type": "securestring",
       "description": "Passowrd of virtual machine to be created",
       "Name": "Confirm password",
-      "inputMode": "PasswordBox",
+      "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
       "properties": {
