@@ -40,7 +40,6 @@
         "configuration": {
           "imports": [
             "Files/Configuration/ArmEndpointConfiguration.json",
-            "Files/Configuration/VmCiCdConfiguration.json",
             "Files/Configuration/LinuxVmReleaseConfiguration.json"
           ],
           "source": {
