@@ -65,7 +65,7 @@
               "deployedResourceIds": [
                 "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
               ],
-              "templateFile": "Files/ReleaseDefinitionTemplates/deployAzureAppService.json",
+              "templateFile": "Files/ReleaseDefinitionTemplates/deployIoTEdge.json",
               "phaseInputs": [{
                 "queue": "Hosted Linux Preview",
                 "taskInputs": [{
