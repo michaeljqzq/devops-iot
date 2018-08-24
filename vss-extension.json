@@ -33,15 +33,21 @@
           "imports": [
             "Files/Parameters/ArmEndpointParameters.json",
             "Files/Parameters/ContainerRegistry.json",
-            "Files/Parameters/IoTHub.json",
-            "Files/Parameters/VM.json"
+            "Files/Parameters/IoTHub.json"
           ]
         },
         "configuration": {
-          "imports": [
-            "Files/Configuration/ArmEndpointConfiguration.json",
-            "Files/Configuration/LinuxVmReleaseConfiguration.json"
-          ],
+          "assets": {
+            "ARMResourceGroup": {
+              "type": "endpoint:AzureRM",
+              "inputs": {
+                "scope": "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
+                "subscriptionId": "{{inputs.subscriptionId}}",
+                "tenantId": "{{inputs.tenantId}}",
+                "accessToken": "{{{inputs.accessToken}}}"
+              }
+            }
+          },
           "source": {
             "repository": {
               "id": "https://github.com/VSChina/iot-edge-sample-solution",
