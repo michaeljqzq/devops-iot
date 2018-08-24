@@ -55,7 +55,7 @@
             }
           },
           "buildDefinition": {
-            "queue": "Hosted Linux Preview",
+            "queue": "HostedLinuxPreview",
             "templateFile": "Files/BuildDefinitionTemplates/buildIoTEdge.json",
             "phaseInputs": [{
               "taskInputs": [{
@@ -73,7 +73,7 @@
               ],
               "templateFile": "Files/ReleaseDefinitionTemplates/deployIoTEdge.json",
               "phaseInputs": [{
-                "queue": "Hosted Linux Preview",
+                "queue": "HostedLinuxPreview",
                 "taskInputs": [{
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
