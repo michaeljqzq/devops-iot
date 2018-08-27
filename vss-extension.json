@@ -80,7 +80,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFile": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {

@@ -44,7 +44,7 @@
             "action": "Create Or Update Resource Group",
             "resourceGroupName": "",
             "location": "",
-            "templateLocation": "Linked artifact",
+            "templateLocation": "URL of the file",
             "csmFileLink": "",
             "csmParametersFileLink": "",
             "csmFile": "",
