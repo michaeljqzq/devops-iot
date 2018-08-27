@@ -50,8 +50,8 @@
           },
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/iot-edge-sample-solution",
-              "defaultBranch": "devops"
+              "id": "https://github.com/michaeljqzq/temp",
+              "defaultBranch": "master"
             }
           },
           "buildDefinition": {
