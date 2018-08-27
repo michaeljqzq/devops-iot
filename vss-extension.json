@@ -86,7 +86,7 @@
                   {
                     "__TaskId__": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
                     "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
-                    "inlineScript": "az extension add --name azure-cli-iot-ext &&\r\naz iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled\r\nTMP_OUTPUT=\"$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}})\" &&\r\nRE=\"\\\"cs\\\":\\s?\\\"(.*)\\\"\" &&\r\nif [[ $TMP_OUTPUT =~ $RE ]]; then CS_OUTPUT=${BASH_REMATCH[1]}; fi &&\r\necho \"##vso[task.setvariable variable=CS_OUTPUT]${CS_OUTPUT}\""
+                    "inlineScript": "az extension add --name azure-cli-iot-ext && az iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled && TMP_OUTPUT=\"$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}})\" && RE=\"\\\"cs\\\":\\s?\\\"(.*)\\\"\" && if [[ $TMP_OUTPUT =~ $RE ]]; then CS_OUTPUT=${BASH_REMATCH[1]}; fi && echo \"##vso[task.setvariable variable=CS_OUTPUT]${CS_OUTPUT}\""
                   },
                   {
                     "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
