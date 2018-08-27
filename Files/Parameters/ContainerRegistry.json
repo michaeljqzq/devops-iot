@@ -13,7 +13,7 @@
       "inputMode": "TextBox",
       "groupId": "containerRegistry",
       "isRequired": true,
-      "defaultValue": "containerRegistry1",
+      "defaultValue": "zhiqing2",
       "properties": {
         "attributes": "primary;"
       },
