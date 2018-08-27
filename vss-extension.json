@@ -63,6 +63,9 @@
                 "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
                 "azureSubscriptionEndpoint": "{{{assets.ARMResourceGroup}}}",
                 "azureContainerRegistry": "{\"loginServer\":\"{{{inputs.containerRegistryName}}}.azurecr.io\", \"id\" : \"/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.ContainerRegistry/registries/{{{inputs.containerRegistryName}}}\"}"
+              },
+              {
+                "__TaskId__": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe"
               }]
             }]
           },
