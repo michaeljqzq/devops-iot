@@ -103,6 +103,42 @@
             "dockerHostEndpoint": "",
             "rootPath": "$(System.DefaultWorkingDirectory)/Drop/Drop"
           }
+        },
+        {
+          "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
+          "version": "2.*",
+          "name": "Azure Deployment: Create Azure Resources",
+          "refName": "",
+          "enabled": true,
+          "alwaysRun": false,
+          "continueOnError": false,
+          "timeoutInMinutes": 0,
+          "definitionType": "task",
+          "overrideInputs": {},
+          "condition": "succeeded()",
+          "inputs": {
+            "ConnectedServiceName": "",
+            "action": "Create Or Update Resource Group",
+            "resourceGroupName": "",
+            "location": "",
+            "templateLocation": "URL of the file",
+            "csmFileLink": "",
+            "csmParametersFileLink": "",
+            "csmFile": "",
+            "csmParametersFile": "",
+            "overrideParameters": "",
+            "deploymentMode": "Incremental",
+            "enableDeploymentPrerequisites": "ConfigureVMWithDGAgent",
+            "deploymentGroupEndpoint": "",
+            "project": "",
+            "deploymentGroupName": "",
+            "copyAzureVMTags": "true",
+            "runAgentServiceAsUser": "false",
+            "userName": "",
+            "password": "",
+            "outputVariable": "",
+            "deploymentOutputs": ""
+          }
         }
       ]
     }],
