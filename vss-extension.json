@@ -61,7 +61,7 @@
               "taskInputs": [{
                 "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
                 "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
-                "ResourceGroupName": "{{{inputs.resourceGroup}}}",
+                "resourceGroupName": "{{{inputs.resourceGroup}}}",
                 "location": "{{{inputs.containerRegistryLocation}}}",
                 "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
                 "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
