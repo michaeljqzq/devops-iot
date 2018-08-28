@@ -47,20 +47,6 @@
                 "tenantId": "{{inputs.tenantId}}",
                 "accessToken": "{{{inputs.accessToken}}}"
               }
-            },
-            "ExternalTfsEndpoint": {
-              "type": "endpoint:ExternalTfs",
-              "inputs": {
-                "token": "{{assets.PatToken}}"
-              }
-            },
-            "PatToken": {
-              "type": "PersonalAccessToken",
-              "inputs": {
-                "scope": "vso.machinegroup_manage",
-                "validityInMinutes": "60",
-                "tokenName": "VM Continuous Delivery - Deployment Group"
-              }
             }
           },
           "source": {
@@ -127,14 +113,11 @@
                   },
                   {
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                      "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.vmlocation}}}",
                     "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-linux-vm.json",
-                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" ",
-                    "deploymentGroupEndpoint": "{{{assets.ExternalTfsEndpoint}}}",
-                    "project": "{{{system.project}}}",
-                    "deploymentGroupName": "{{inputs.vmName}}-dg"
+                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" "
                   }
                 ]
               },
