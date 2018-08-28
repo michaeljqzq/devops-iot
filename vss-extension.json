@@ -53,34 +53,6 @@
               "inputs": {
                 "token": "{{assets.PatToken}}"
               }
-            },
-            "DeploymentGroup": {
-              "type": "DeploymentGroup",
-              "inputs": {
-                "deploymentGroupName": "{{inputs.vmName}}-dg"
-              }
-            },
-            "PatToken": {
-              "type": "PersonalAccessToken",
-              "inputs": {
-                "scope": "vso.machinegroup_manage",
-                "validityInMinutes": "60",
-                "tokenName": "VM Continuous Delivery - Deployment Group"
-              }
-            },
-            "VmExtension": {
-              "type": "TeamServicesAgentVMExtension",
-              "inputs": {
-                "vmUri": "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}",
-                "deploymentGroupName": "{{inputs.deploymentGroupName}}",
-                "location": "{{inputs.vmlocation}}",
-                "tags": "",
-                "token": "{{assets.PatToken}}",
-                "osType": "Linux",
-                "vmName": "{{inputs.vmName}}",
-                "tenantId": "{{inputs.tenantId}}",
-                "accessToken": "{{inputs.accessToken}}"
-              }
             }
           },
           "source": {
