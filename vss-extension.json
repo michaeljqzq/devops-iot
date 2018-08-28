@@ -38,8 +38,8 @@
           ]
         },
         "configuration": {
-          "assets": {
-            "ARMResourceGroup": {
+          "assets": [{
+              "id": "ARMResourceGroup",
               "type": "endpoint:AzureRM",
               "inputs": {
                 "scope": "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
@@ -47,8 +47,7 @@
                 "tenantId": "{{inputs.tenantId}}",
                 "accessToken": "{{{inputs.accessToken}}}"
               }
-            }
-          },
+          }],
           "source": {
             "repository": {
               "id": "https://github.com/michaeljqzq/temp",
