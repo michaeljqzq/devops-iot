@@ -53,6 +53,14 @@
               "inputs": {
                 "token": "{{assets.PatToken}}"
               }
+            },
+            "PatToken": {
+              "type": "PersonalAccessToken",
+              "inputs": {
+                "scope": "vso.machinegroup_manage",
+                "validityInMinutes": "60",
+                "tokenName": "VM Continuous Delivery - Deployment Group"
+              }
             }
           },
           "source": {
