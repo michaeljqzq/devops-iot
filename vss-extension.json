@@ -119,9 +119,6 @@
                     "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" "
                   }
                 ]
-              },
-              {
-                "queue": "{{assets.DeploymentGroup}}"
               }]
             }]
           }
