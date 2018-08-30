@@ -38,16 +38,28 @@
       }
     },
     {
-      "id": "accessToken",
-      "type": "secureString",
-      "description": "AAD access token for VSTS.",
-      "inputMode": "AadAccessToken"
+      "id": "location",
+      "type": "string",
+      "description": "Location of the resource group.",
+      "name": "Location",
+      "inputMode": "Combo",
+      "groupId": "azure",
+      "isRequired": true,
+      "dataSourceId": "resourceGroupLocations",
+      "defaultValue": "South Central US",
+      "properties": {
+        "attributes": "primary;"
+      }
     },
     {
-      "id": "tenantId",
-      "type": "string",
-      "description": "AAD tenant id.",
-      "inputMode": "TenantId"
+      "id": "azureAuth",
+      "type": "authorization",
+      "description": "Authorization for Azure ARM endpoints.",
+      "inputMode": "None",
+      "properties": {
+        "scope": "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}",
+        "location": "{{{inputs.location}}}"
+      }
     }
   ]
 }
