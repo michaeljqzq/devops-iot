@@ -35,7 +35,13 @@
         "errorMessage": "Resource group name should be all alpha-numerics",
         "minLength": 3,
         "maxLength": 15
-      }
+      },
+      "dynamicValidations": [
+        {
+          "dataSourceId": "checkResourceGroupAvailability",
+          "errorMessage": "Resource Group with this name already exists."
+        }
+      ]
     },
     {
       "id": "location",
