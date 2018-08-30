@@ -61,5 +61,18 @@
         "location": "{{{inputs.location}}}"
       }
     }
+  ],
+  "dataSources": [
+    {
+      "id": "resourceGroupLocations",
+      "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/microsoft.resources?api-version=2014-04-01-preview",
+      "resultSelector": "$.resourceTypes[?(@.resourceType === 'subscriptions/resourceGroups')].locations"
+    },
+    {
+      "id": "checkResourceGroupAvailability",
+      "endpointUrlStem": "subscriptions/{{{inputs.subscriptionId}}}/resourceGroups//{{{inputs.resourceGroup}}}?api-version=2014-04-01-preview",
+      "httpMethod": "GET",
+      "resultTemplate":"false"
+    }
   ]
 }
