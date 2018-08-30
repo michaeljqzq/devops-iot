@@ -46,10 +46,7 @@
       "groupId": "azure",
       "isRequired": true,
       "dataSourceId": "resourceGroupLocations",
-      "defaultValue": "South Central US",
-      "properties": {
-        "attributes": "primary;"
-      }
+      "defaultValue": "South Central US"
     },
     {
       "id": "azureAuth",
