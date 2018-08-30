@@ -85,6 +85,9 @@
                 "vmPassword": {
                   "value": "{{{inputs.vmPassword}}}",
                   "isSecret": true
+                },
+                "DEVOPS_IOTEDGE_REGISTRY_URL": {
+                  "value": "{{{inputs.containerRegistryName}}}.azurecr.io"
                 }
               },
               "templateFile": "Files/ReleaseDefinitionTemplates/deployIoTEdge.json",
