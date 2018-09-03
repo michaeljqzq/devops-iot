@@ -26,8 +26,8 @@
         "description": "i18n:Template for configuring CI/CD pipeline for ASP.Net app on Azure windows app service",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-edge-dotnet",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iothub",
+          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-edge-dotnet",
+          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-iothub",
           "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-new-edge-device"
         },
         "parameters": {
@@ -137,8 +137,8 @@
         "description": "i18n:Template for configuring CI/CD pipeline for ASP.Net app on Azure windows app service",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-edge-node",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iothub",
+          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-edge-node",
+          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-iothub",
           "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-new-edge-device"
         }
       },
@@ -248,8 +248,8 @@
         "description": "i18n:Template for configuring CI/CD pipeline for ASP.Net app on Azure windows app service",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-edge-java",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iothub",
+          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-edge-java",
+          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-iothub",
           "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-new-edge-device"
         }
       },
@@ -359,8 +359,8 @@
         "description": "i18n:Template for configuring CI/CD pipeline for ASP.Net app on Azure windows app service",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-edge-c",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iothub",
+          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-edge-c",
+          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-iothub",
           "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-new-edge-device"
         }
       },
@@ -470,8 +470,8 @@
         "description": "i18n:Template for configuring CI/CD pipeline for ASP.Net app on Azure windows app service",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-edge-python",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iothub",
+          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-edge-python",
+          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-iothub",
           "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-new-edge-device"
         }
       },
@@ -581,8 +581,8 @@
         "description": "i18n:Template for configuring CI/CD pipeline for ASP.Net app on Azure windows app service",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-edge-dotnet",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iothub",
+          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-edge-dotnet",
+          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-iothub",
           "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
         }
       },
@@ -683,7 +683,7 @@
       }
     },
     {
-      "id": "runtime-type-edge-dotnet",
+      "id": "framework-type-edge-dotnet",
       "type": "ms.vss-continuous-delivery.pipeline-attribute-descriptor-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-attribute-descriptors"
@@ -691,12 +691,12 @@
       "properties": {
         "name": "i18n:Edge - .NET",
         "description": "i18n:New Edge solution using .NET",
-        "type": "runtime",
+        "type": "framework",
         "iconSvgContent": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='#621ee5' width='40' height='40'/><path fill='#FFFFFF' d='M5.94 25.51c-0.23 0-0.43-0.08-0.59-0.25 -0.16-0.17-0.25-0.37-0.25-0.6 0-0.23 0.08-0.43 0.25-0.6s0.36-0.25 0.59-0.25c0.24 0 0.44 0.08 0.61 0.25 0.17 0.17 0.25 0.37 0.25 0.6 0 0.23-0.08 0.43-0.25 0.6C6.38 25.43 6.18 25.51 5.94 25.51z'/><path fill='#FFFFFF' d='M17.78 25.34h-1.56l-5.59-8.65c-0.14-0.22-0.26-0.44-0.35-0.68h-0.05c0.04 0.23 0.06 0.73 0.06 1.49v7.84H9.03V14.49h1.65l5.44 8.52c0.23 0.35 0.37 0.6 0.44 0.73h0.03c-0.05-0.31-0.08-0.84-0.08-1.6V14.49h1.27V25.34z'/><path fill='#FFFFFF' d='M26.38 25.34h-5.75V14.49h5.51v1.15h-4.24v3.61h3.92v1.14h-3.92v3.8h4.48V25.34z'/><path fill='#FFFFFF' d='M34.92 15.64h-3.13v9.7h-1.27v-9.7h-3.12v-1.15h7.53V15.64z'/></svg>"
       }
     },
     {
-      "id": "runtime-type-edge-node",
+      "id": "framework-type-edge-node",
       "type": "ms.vss-continuous-delivery.pipeline-attribute-descriptor-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-attribute-descriptors"
@@ -704,12 +704,12 @@
       "properties": {
         "name": "i18n:Edge - Node",
         "description": "i18n:New Edge solution using Node.js",
-        "type": "runtime",
+        "type": "framework",
         "iconSvgContent": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='#621ee5' width='40' height='40'/><path fill='#FFFFFF' d='M5.94 25.51c-0.23 0-0.43-0.08-0.59-0.25 -0.16-0.17-0.25-0.37-0.25-0.6 0-0.23 0.08-0.43 0.25-0.6s0.36-0.25 0.59-0.25c0.24 0 0.44 0.08 0.61 0.25 0.17 0.17 0.25 0.37 0.25 0.6 0 0.23-0.08 0.43-0.25 0.6C6.38 25.43 6.18 25.51 5.94 25.51z'/><path fill='#FFFFFF' d='M17.78 25.34h-1.56l-5.59-8.65c-0.14-0.22-0.26-0.44-0.35-0.68h-0.05c0.04 0.23 0.06 0.73 0.06 1.49v7.84H9.03V14.49h1.65l5.44 8.52c0.23 0.35 0.37 0.6 0.44 0.73h0.03c-0.05-0.31-0.08-0.84-0.08-1.6V14.49h1.27V25.34z'/><path fill='#FFFFFF' d='M26.38 25.34h-5.75V14.49h5.51v1.15h-4.24v3.61h3.92v1.14h-3.92v3.8h4.48V25.34z'/><path fill='#FFFFFF' d='M34.92 15.64h-3.13v9.7h-1.27v-9.7h-3.12v-1.15h7.53V15.64z'/></svg>"
       }
     },
     {
-      "id": "runtime-type-edge-java",
+      "id": "framework-type-edge-java",
       "type": "ms.vss-continuous-delivery.pipeline-attribute-descriptor-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-attribute-descriptors"
@@ -717,12 +717,12 @@
       "properties": {
         "name": "i18n:Edge - Java",
         "description": "i18n:New Edge solution using Java",
-        "type": "runtime",
+        "type": "framework",
         "iconSvgContent": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='#621ee5' width='40' height='40'/><path fill='#FFFFFF' d='M5.94 25.51c-0.23 0-0.43-0.08-0.59-0.25 -0.16-0.17-0.25-0.37-0.25-0.6 0-0.23 0.08-0.43 0.25-0.6s0.36-0.25 0.59-0.25c0.24 0 0.44 0.08 0.61 0.25 0.17 0.17 0.25 0.37 0.25 0.6 0 0.23-0.08 0.43-0.25 0.6C6.38 25.43 6.18 25.51 5.94 25.51z'/><path fill='#FFFFFF' d='M17.78 25.34h-1.56l-5.59-8.65c-0.14-0.22-0.26-0.44-0.35-0.68h-0.05c0.04 0.23 0.06 0.73 0.06 1.49v7.84H9.03V14.49h1.65l5.44 8.52c0.23 0.35 0.37 0.6 0.44 0.73h0.03c-0.05-0.31-0.08-0.84-0.08-1.6V14.49h1.27V25.34z'/><path fill='#FFFFFF' d='M26.38 25.34h-5.75V14.49h5.51v1.15h-4.24v3.61h3.92v1.14h-3.92v3.8h4.48V25.34z'/><path fill='#FFFFFF' d='M34.92 15.64h-3.13v9.7h-1.27v-9.7h-3.12v-1.15h7.53V15.64z'/></svg>"
       }
     },
     {
-      "id": "runtime-type-edge-c",
+      "id": "framework-type-edge-c",
       "type": "ms.vss-continuous-delivery.pipeline-attribute-descriptor-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-attribute-descriptors"
@@ -730,12 +730,12 @@
       "properties": {
         "name": "i18n:Edge - C",
         "description": "i18n:New Edge solution using C",
-        "type": "runtime",
+        "type": "framework",
         "iconSvgContent": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='#621ee5' width='40' height='40'/><path fill='#FFFFFF' d='M5.94 25.51c-0.23 0-0.43-0.08-0.59-0.25 -0.16-0.17-0.25-0.37-0.25-0.6 0-0.23 0.08-0.43 0.25-0.6s0.36-0.25 0.59-0.25c0.24 0 0.44 0.08 0.61 0.25 0.17 0.17 0.25 0.37 0.25 0.6 0 0.23-0.08 0.43-0.25 0.6C6.38 25.43 6.18 25.51 5.94 25.51z'/><path fill='#FFFFFF' d='M17.78 25.34h-1.56l-5.59-8.65c-0.14-0.22-0.26-0.44-0.35-0.68h-0.05c0.04 0.23 0.06 0.73 0.06 1.49v7.84H9.03V14.49h1.65l5.44 8.52c0.23 0.35 0.37 0.6 0.44 0.73h0.03c-0.05-0.31-0.08-0.84-0.08-1.6V14.49h1.27V25.34z'/><path fill='#FFFFFF' d='M26.38 25.34h-5.75V14.49h5.51v1.15h-4.24v3.61h3.92v1.14h-3.92v3.8h4.48V25.34z'/><path fill='#FFFFFF' d='M34.92 15.64h-3.13v9.7h-1.27v-9.7h-3.12v-1.15h7.53V15.64z'/></svg>"
       }
     },
     {
-      "id": "runtime-type-edge-python",
+      "id": "framework-type-edge-python",
       "type": "ms.vss-continuous-delivery.pipeline-attribute-descriptor-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-attribute-descriptors"
@@ -743,20 +743,20 @@
       "properties": {
         "name": "i18n:Edge - Python",
         "description": "i18n:New Edge solution using Python",
-        "type": "runtime",
+        "type": "framework",
         "iconSvgContent": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='#621ee5' width='40' height='40'/><path fill='#FFFFFF' d='M5.94 25.51c-0.23 0-0.43-0.08-0.59-0.25 -0.16-0.17-0.25-0.37-0.25-0.6 0-0.23 0.08-0.43 0.25-0.6s0.36-0.25 0.59-0.25c0.24 0 0.44 0.08 0.61 0.25 0.17 0.17 0.25 0.37 0.25 0.6 0 0.23-0.08 0.43-0.25 0.6C6.38 25.43 6.18 25.51 5.94 25.51z'/><path fill='#FFFFFF' d='M17.78 25.34h-1.56l-5.59-8.65c-0.14-0.22-0.26-0.44-0.35-0.68h-0.05c0.04 0.23 0.06 0.73 0.06 1.49v7.84H9.03V14.49h1.65l5.44 8.52c0.23 0.35 0.37 0.6 0.44 0.73h0.03c-0.05-0.31-0.08-0.84-0.08-1.6V14.49h1.27V25.34z'/><path fill='#FFFFFF' d='M26.38 25.34h-5.75V14.49h5.51v1.15h-4.24v3.61h3.92v1.14h-3.92v3.8h4.48V25.34z'/><path fill='#FFFFFF' d='M34.92 15.64h-3.13v9.7h-1.27v-9.7h-3.12v-1.15h7.53V15.64z'/></svg>"
       }
     },
     {
-      "id": "framework-type-iothub",
+      "id": "runtime-type-iothub",
       "type": "ms.vss-continuous-delivery.pipeline-attribute-descriptor-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-attribute-descriptors"
       ],
       "properties": {
-        "name": "i18n:IoT Hub",
-        "description": "i18n:IoT Hub framework",
-        "type": "framework",
+        "name": "i18n:IoT Edge",
+        "description": "i18n:IoT Edge runtime",
+        "type": "runtime",
         "iconSvgContent": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='#621ee5' width='40' height='40'/><path fill='#FFFFFF' d='M7.68 23.75H6.71L5.91 21.65H2.73l-0.75 2.1H1l2.88-7.51h0.91L7.68 23.75zM5.62 20.86l-1.18-3.2c-0.04-0.1-0.08-0.27-0.11-0.5H4.31c-0.03 0.21-0.07 0.38-0.12 0.5l-1.17 3.2H5.62z'/><path fill='#FFFFFF' d='M8.43 23.45v-1.04c0.12 0.1 0.26 0.2 0.43 0.28 0.17 0.08 0.34 0.15 0.52 0.21 0.18 0.06 0.37 0.1 0.55 0.13 0.19 0.03 0.36 0.05 0.51 0.05 0.54 0 0.94-0.1 1.21-0.3 0.27-0.2 0.4-0.49 0.4-0.87 0-0.2-0.04-0.38-0.13-0.53 -0.09-0.15-0.21-0.29-0.37-0.41 -0.16-0.12-0.34-0.24-0.56-0.36s-0.45-0.23-0.69-0.36c-0.26-0.13-0.51-0.27-0.73-0.4 -0.23-0.14-0.42-0.29-0.59-0.45 -0.17-0.16-0.3-0.35-0.4-0.56s-0.14-0.45-0.14-0.73c0-0.34 0.08-0.64 0.22-0.89 0.15-0.25 0.35-0.46 0.59-0.63 0.24-0.16 0.52-0.29 0.83-0.37 0.31-0.08 0.63-0.12 0.96-0.12 0.74 0 1.28 0.09 1.62 0.27v0.99c-0.44-0.31-1.01-0.46-1.71-0.46 -0.19 0-0.38 0.02-0.58 0.06 -0.19 0.04-0.36 0.11-0.51 0.2 -0.15 0.09-0.27 0.21-0.37 0.35 -0.09 0.14-0.14 0.32-0.14 0.52 0 0.19 0.04 0.36 0.11 0.5 0.07 0.14 0.18 0.27 0.32 0.38 0.14 0.12 0.31 0.23 0.51 0.34 0.2 0.11 0.43 0.23 0.69 0.36 0.27 0.13 0.52 0.27 0.76 0.42 0.24 0.15 0.45 0.31 0.63 0.49 0.18 0.18 0.32 0.38 0.43 0.59 0.11 0.22 0.16 0.46 0.16 0.74 0 0.37-0.07 0.68-0.22 0.94 -0.15 0.26-0.34 0.47-0.59 0.63 -0.25 0.16-0.53 0.28-0.85 0.35 -0.32 0.07-0.66 0.11-1.02 0.11 -0.12 0-0.27-0.01-0.44-0.03 -0.17-0.02-0.35-0.05-0.53-0.08C9.16 23.73 8.99 23.68 8.82 23.63S8.53 23.52 8.43 23.45z'/><path fill='#FFFFFF' d='M15.36 20.92v2.84h-0.88v-7.51h2.06c0.8 0 1.43 0.2 1.87 0.59 0.44 0.39 0.66 0.94 0.66 1.65s-0.25 1.29-0.74 1.75c-0.49 0.45-1.15 0.68-1.99 0.68H15.36zM15.36 17.04v3.08h0.92c0.61 0 1.07-0.14 1.39-0.42 0.32-0.28 0.48-0.67 0.48-1.18 0-0.99-0.59-1.49-1.76-1.49H15.36z'/><path fill='#FFFFFF' d='M18.96 23.87c-0.16 0-0.3-0.06-0.41-0.17 -0.11-0.12-0.17-0.25-0.17-0.41 0-0.16 0.06-0.3 0.17-0.42 0.11-0.12 0.25-0.17 0.41-0.17 0.16 0 0.3 0.06 0.42 0.17 0.12 0.12 0.17 0.26 0.17 0.42 0 0.16-0.06 0.3-0.17 0.41C19.26 23.81 19.12 23.87 18.96 23.87z'/><path fill='#FFFFFF' d='M27.15 23.75h-1.08l-3.86-5.98c-0.1-0.15-0.18-0.31-0.24-0.47h-0.03c0.03 0.16 0.04 0.5 0.04 1.03v5.42h-0.88v-7.51h1.14l3.76 5.89c0.16 0.24 0.26 0.41 0.3 0.5h0.02c-0.04-0.22-0.05-0.58-0.05-1.1v-5.29h0.88V23.75z'/><path fill='#FFFFFF' d='M33.1 23.75h-3.98v-7.51h3.81v0.8h-2.93v2.5h2.71v0.79h-2.71v2.63h3.1V23.75z'/><path fill='#FFFFFF' d='M39 17.04h-2.17v6.71h-0.88v-6.71h-2.16v-0.8H39V17.04z'/></svg>"
       }
     },
