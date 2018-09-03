@@ -1,10 +1,10 @@
 {
   "manifestVersion": 1.0,
-  "extensionId": "vss-continuous-delivery-pipeline-templates",
-  "name": "Zhiqing Pipeline templates extension for continuous delivery",
+  "extensionId": "vss-continuous-delivery-pipeline-templates-r",
+  "name": "Pipeline templates extension for continuous delivery",
   "publisher": "michaeljqzq",
-  "version": "0.0.1",
-  "description": "Zhiqing Pipeline template contributions for creating CI/CD pipelines",
+  "version": "0.1.0",
+  "description": "Pipeline template contributions for creating CI/CD pipelines",
   "categories": [
     "Integrate"
   ],
