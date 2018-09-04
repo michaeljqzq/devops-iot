@@ -17,7 +17,7 @@
   }],
   "contributions": [
     {
-      "id": "aspnet-windowswebapp",
+      "id": "dotnet-newdevice",
       "type": "ms.vss-continuous-delivery.pipeline-template-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-templates"
@@ -49,7 +49,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/michaeljqzq/temp",
+              "id": "https://github.com/VSChina/azure-iot-edge-sample-dotnet",
               "defaultBranch": "master"
             }
           },
@@ -128,7 +128,7 @@
       }
     },
     {
-      "id": "fake1",
+      "id": "node-newdevice",
       "type": "ms.vss-continuous-delivery.pipeline-template-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-templates"
@@ -161,7 +161,7 @@
         }],
         "source": {
           "repository": {
-            "id": "https://github.com/michaeljqzq/temp",
+            "id": "https://github.com/VSChina/azure-iot-edge-sample-node",
             "defaultBranch": "master"
           }
         },
@@ -239,7 +239,7 @@
       }
     },
     {
-      "id": "fake2",
+      "id": "java-newdevice",
       "type": "ms.vss-continuous-delivery.pipeline-template-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-templates"
@@ -272,7 +272,7 @@
         }],
         "source": {
           "repository": {
-            "id": "https://github.com/michaeljqzq/temp",
+            "id": "https://github.com/VSChina/azure-iot-edge-sample-java",
             "defaultBranch": "master"
           }
         },
@@ -350,7 +350,7 @@
       }
     },
     {
-      "id": "fake3",
+      "id": "c-newdevice",
       "type": "ms.vss-continuous-delivery.pipeline-template-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-templates"
@@ -383,7 +383,7 @@
         }],
         "source": {
           "repository": {
-            "id": "https://github.com/michaeljqzq/temp",
+            "id": "https://github.com/VSChina/azure-iot-edge-sample-c",
             "defaultBranch": "master"
           }
         },
@@ -461,7 +461,7 @@
       }
     },
     {
-      "id": "fake4",
+      "id": "python-newdevice",
       "type": "ms.vss-continuous-delivery.pipeline-template-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-templates"
@@ -494,7 +494,7 @@
         }],
         "source": {
           "repository": {
-            "id": "https://github.com/michaeljqzq/temp",
+            "id": "https://github.com/VSChina/azure-iot-edge-sample-python",
             "defaultBranch": "master"
           }
         },
@@ -572,7 +572,7 @@
       }
     },
     {
-      "id": "fake5",
+      "id": "dotnet-existingdevice",
       "type": "ms.vss-continuous-delivery.pipeline-template-type",
       "targets": [
         "ms.vss-continuous-delivery.pipeline-templates"
@@ -605,7 +605,7 @@
         }],
         "source": {
           "repository": {
-            "id": "https://github.com/michaeljqzq/temp",
+            "id": "https://github.com/VSChina/azure-iot-edge-sample-dotnet",
             "defaultBranch": "master"
           }
         },
