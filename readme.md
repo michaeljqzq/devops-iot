@@ -25,7 +25,7 @@ Choose framework `Edge .NET`.
 ![](images/docs-4.png)
 Choose service `Create a simulated Edge device`.
 ![](images/docs-5.png)
-Fill in necessary configuration.
+Fill in necessary configuration. Make sure that the resource group you filled in "Azure" section is already existed.
 
 ### 4. Deployment
 
