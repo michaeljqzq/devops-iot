@@ -1,9 +1,9 @@
 {
   "manifestVersion": 1.0,
-  "extensionId": "vss-continuous-delivery-pipeline-templates-r",
+  "extensionId": "r-vss-continuous-delivery-pipeline-templates",
   "name": "Pipeline templates extension for continuous delivery",
   "publisher": "michaeljqzq",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pipeline template contributions for creating CI/CD pipelines",
   "categories": [
     "Integrate"
