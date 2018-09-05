@@ -9,7 +9,7 @@
   "inputs": [{
       "id": "containerRegistryName",
       "type": "string",
-      "name": "Container Registry Name",
+      "name": "Container Registry name",
       "inputMode": "TextBox",
       "groupId": "containerRegistry",
       "isRequired": true,
