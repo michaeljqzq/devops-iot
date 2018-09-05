@@ -79,8 +79,8 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}"
+                
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
               ],
               "variables": {
                 "vmPassword": {
@@ -191,8 +191,8 @@
           "environments": [{
             "name": "dev",
             "deployedResourceIds": [
-              "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}"
+              
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
             ],
             "variables": {
               "vmPassword": {
@@ -302,8 +302,8 @@
           "environments": [{
             "name": "dev",
             "deployedResourceIds": [
-              "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}"
+              
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
             ],
             "variables": {
               "vmPassword": {
@@ -413,8 +413,8 @@
           "environments": [{
             "name": "dev",
             "deployedResourceIds": [
-              "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}"
+              
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
             ],
             "variables": {
               "vmPassword": {
@@ -524,8 +524,8 @@
           "environments": [{
             "name": "dev",
             "deployedResourceIds": [
-              "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}"
+              
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
             ],
             "variables": {
               "vmPassword": {
@@ -635,8 +635,8 @@
           "environments": [{
             "name": "dev",
             "deployedResourceIds": [
-              "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{inputs.vmName}}"
+              
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
             ],
             "variables": {
               "vmPassword": {
