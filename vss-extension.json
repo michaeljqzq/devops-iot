@@ -168,6 +168,11 @@
         "buildDefinition": {
           "queue": "hostedlinux",
           "templateFile": "Files/BuildDefinitionTemplates/buildIoTEdge.json",
+          "variables": {
+            "DEVOPS_IOTEDGE_REGISTRY_URL": {
+              "value": "{{{inputs.containerRegistryName}}}.azurecr.io"
+            }
+          },
           "phaseInputs": [{
             "taskInputs": [{
               "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
