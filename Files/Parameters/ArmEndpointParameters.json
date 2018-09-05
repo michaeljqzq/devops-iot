@@ -23,18 +23,12 @@
       "type": "string",
       "description": "Name of resource group which should the provisioned resources.",
       "Name": "Resource group",
-      "inputMode": "TextBox",
+      "inputMode": "Combo",
       "groupId": "azure",
       "isRequired": true,
-      "defaultValue": "devops-iotedge",
+      "dataSourceId": "resourceGroupList",
       "properties": {
         "attributes": "primary;"
-      },
-      "staticValidation": {
-        "pattern": "[a-zA-Z0-9]*",
-        "errorMessage": "Resource group name should be all alpha-numerics",
-        "minLength": 3,
-        "maxLength": 15
       }
     },
     {
@@ -64,6 +58,11 @@
       "id": "resourceGroupLocations",
       "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/microsoft.resources?api-version=2014-04-01-preview",
       "resultSelector": "$.resourceTypes[?(@.resourceType === 'subscriptions/resourceGroups')].locations"
+    },
+    {
+      "id": "resourceGroupList",
+      "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/resourcegroups?api-version=2018-02-01",
+      "resultSelector": "$..name"
     },
     {
       "id": "checkResourceGroupAvailability",
