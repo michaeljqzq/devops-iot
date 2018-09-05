@@ -85,7 +85,7 @@
               "name": "dev",
               "deployedResourceIds": [
                 
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/devops-iotedge"
               ],
               "variables": {
                 "vmPassword": {
@@ -202,7 +202,7 @@
             "name": "dev",
             "deployedResourceIds": [
               
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/devops-iotedge"
             ],
             "variables": {
               "vmPassword": {
@@ -318,7 +318,7 @@
             "name": "dev",
             "deployedResourceIds": [
               
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/devops-iotedge"
             ],
             "variables": {
               "vmPassword": {
@@ -434,7 +434,7 @@
             "name": "dev",
             "deployedResourceIds": [
               
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/devops-iotedge"
             ],
             "variables": {
               "vmPassword": {
@@ -550,7 +550,7 @@
             "name": "dev",
             "deployedResourceIds": [
               
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/devops-iotedge"
             ],
             "variables": {
               "vmPassword": {
@@ -666,7 +666,7 @@
             "name": "dev",
             "deployedResourceIds": [
               
-              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/nonexistingwebsite"
+              "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Web/sites/devops-iotedge"
             ],
             "variables": {
               "vmPassword": {
