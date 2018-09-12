@@ -26,6 +26,7 @@
       "inputMode": "TextBox",
       "groupId": "azure",
       "isRequired": true,
+      "defaultValue": "devops-edge-rg",
       "properties": {
         "attributes": "primary;"
       },
@@ -69,8 +70,9 @@
     },
     {
       "id": "checkResourceGroupAvailability",
-      "endpointUrlStem": "subscriptions/{{{inputs.subscriptionId}}}/resourceGroups//{{{inputs.resourceGroup}}}?api-version=2018-02-01",
-      "httpMethod": "GET"
+      "endpointUrlStem": "subscriptions/{{{inputs.subscriptionId}}}/resourceGroups//{{{inputs.resourceGroup}}}?api-version=2014-04-01-preview",
+      "httpMethod": "GET",
+      "resultTemplate":"false"
     }
   ]
 }
