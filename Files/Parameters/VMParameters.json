@@ -33,7 +33,10 @@
       "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "devops",
+      "defaultValue": "",
+      "properties": {
+        "attributes": "primary;"
+      },
       "staticValidation": {
         "pattern": "^(?:(?!(^(administrator|admin|admin1|admin2|user|user1|user2|user3|user4|user5|test|test1|test2|test3|1|123|a|actusr|adm|aspnet|backup|console|guest|owner|root|server|sql|support|support_388945a0|sys)$)).)*$",
         "errorMessage": "The specified user name is not allowed. User names must meet length requirements and must not include reserved words or unsupported characters. Try again with a different value.",
@@ -49,7 +52,9 @@
       "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "aB1^aB1^aB1^aB1^",
+      "properties": {
+        "attributes": "primary;"
+      },
       "staticValidation": {
         "pattern": "^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&/=?_,:;])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&/=?_,:;])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&/=?_,:;])).{12,123}$",
         "errorMessage": "Password must have 3 of the following: 1 lowercase character, 1 uppercase character, 1 number, and 1 special character that is not '\\' or '-'.",
@@ -65,7 +70,9 @@
       "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "aB1^aB1^aB1^aB1^",
+      "properties": {
+        "attributes": "primary;"
+      },
       "staticValidation": {
         "pattern": "^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&/=?_,:;])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&/=?_,:;])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&/=?_,:;])).{12,123}$",
         "errorMessage": "Password must have 3 of the following: 1 lowercase character, 1 uppercase character, 1 number, and 1 special character that is not '\\' or '-'.",
