@@ -22,14 +22,17 @@
       "id": "resourceGroup",
       "type": "string",
       "description": "Name of resource group which should the provisioned resources.",
-      "Name": "Resource group",
-      "inputMode": "Combo",
+      "Name": "New resource group",
+      "inputMode": "TextBox",
       "groupId": "azure",
       "isRequired": true,
-      "dataSourceId": "resourceGroupList",
       "properties": {
         "attributes": "primary;"
-      }
+      },
+      "dynamicValidations": [{
+        "dataSourceId": "checkResourceGroupAvailability",
+        "errorMessage": "Resource group with this name already exists"
+      }]
     },
     {
       "id": "location",
@@ -66,9 +69,8 @@
     },
     {
       "id": "checkResourceGroupAvailability",
-      "endpointUrlStem": "subscriptions/{{{inputs.subscriptionId}}}/resourceGroups//{{{inputs.resourceGroup}}}?api-version=2014-04-01-preview",
-      "httpMethod": "GET",
-      "resultTemplate":"false"
+      "endpointUrlStem": "subscriptions/{{{inputs.subscriptionId}}}/resourceGroups//{{{inputs.resourceGroup}}}?api-version=2018-02-01",
+      "httpMethod": "GET"
     }
   ]
 }
