@@ -14,7 +14,7 @@
       "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "edge-vm",
+      "defaultValue": "devops-edgevm",
       "properties": {
         "attributes": "primary;"
       },
@@ -29,7 +29,7 @@
       "id": "vmUsername",
       "type": "string",
       "description": "Username of virtual machine to be created",
-      "Name": "Virtual machine User name",
+      "Name": "Virtual machine user name",
       "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,

@@ -20,7 +20,7 @@
       },
       "staticValidation": {
         "pattern": "[a-zA-Z0-9\\-]*",
-        "errorMessage": "The value must contain only alphanumeric characters or the following: -",
+        "errorMessage": "The value must contain only alphanumeric characters or the following: - , less than 16 characters",
         "minLength": 3,
         "maxLength": 15
       },
