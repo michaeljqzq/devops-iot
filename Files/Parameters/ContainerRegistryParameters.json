@@ -69,9 +69,10 @@
     },
     {
       "id": "checkContainerRegistryAvailability",
-      "endpointUrlStem": "/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry/checkNameAvailability?api-version=2017-10-01",
+      "endpointUrlStem": "subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.ContainerRegistry/checkNameAvailability?api-version=2017-10-01",
       "httpMethod": "POST",
-      "requestBody": "\\{\\\"name\\\":\\\"{{{inputs.containerRegistryName}}}\\\",\\\"type\\\":\\\"Microsoft.ContainerRegistry/registries\\\"\\}"
+      "requestBody": "{\"name\":\"{{{inputs.containerRegistryName}}}\",\"type\":\"Microsoft.ContainerRegistry/registries\"}",
+      "resultTemplate": "{\"value\":\"{{{nameAvailable}}}\",\"message\":\"{{{message}}}\"}"
     }
   ]
 }

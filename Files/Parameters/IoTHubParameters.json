@@ -20,7 +20,7 @@
       },
       "staticValidation": {
         "pattern": "[a-zA-Z0-9\\-]*",
-        "errorMessage": "The value must contain only alphanumeric characters or the following: -",
+        "errorMessage": "The value must contain only alphanumeric characters or the following: - , less than 16 characters",
         "minLength": 3,
         "maxLength": 15
       },
@@ -90,9 +90,10 @@
     },
     {
       "id": "checkIotHubAvailability",
-      "endpointUrlStem": "/{{{inputs.subscriptionId}}}/providers/Microsoft.Devices/checkNameAvailability?api-version=2018-02-01",
+      "endpointUrlStem": "subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.Devices/checkNameAvailability?api-version=2018-04-01",
       "httpMethod": "POST",
-      "requestBody": "\\{\\\"name\\\":\\\"{{{inputs.iotHubName}}}\\\"\\}"
+      "requestBody": "{\"name\":\"{{{inputs.iotHubName}}}\"}",
+      "resultTemplate": "{\"value\":\"{{{nameAvailable}}}\",\"message\":\"{{{message}}}\"}"
     }
   ]
 }
