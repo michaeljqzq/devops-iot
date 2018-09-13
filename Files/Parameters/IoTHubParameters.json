@@ -90,9 +90,10 @@
     },
     {
       "id": "checkIotHubAvailability",
-      "endpointUrlStem": "/{{{inputs.subscriptionId}}}/providers/Microsoft.Devices/checkNameAvailability?api-version=2018-02-01",
+      "endpointUrlStem": "subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.Devices/checkNameAvailability?api-version=2018-04-01",
       "httpMethod": "POST",
-      "requestBody": "\\{\\\"name\\\":\\\"{{{inputs.iotHubName}}}\\\"\\}"
+      "requestBody": "{\"name\":\"{{{inputs.iotHubName}}}\"}",
+      "resultTemplate": "{\"value\":\"{{{nameAvailable}}}\",\"message\":\"{{{message}}}\"}"
     }
   ]
 }
