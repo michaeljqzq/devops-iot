@@ -25,9 +25,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using .NET Core",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
           "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-dotnet",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
         },
         "parameters": {
           "imports": [
@@ -142,9 +142,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Node.js",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
           "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-nodejs",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
         },
         "parameters": {
           "imports": [
@@ -259,9 +259,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Java",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
           "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-java",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
         },
         "parameters": {
           "imports": [
@@ -376,9 +376,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using C",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
-          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-edge-c",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "runtimeId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.runtime-type-edge-c",
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
         },
         "parameters": {
           "imports": [
@@ -493,9 +493,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Python",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
           "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-python",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
         },
         "parameters": {
           "imports": [
@@ -610,9 +610,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using .NET Core",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
           "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-dotnet",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
         },
         "parameters": {
           "imports": [
@@ -712,9 +712,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Node.js",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
           "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-nodejs",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
         },
         "parameters": {
           "imports": [
@@ -814,9 +814,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Java",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
           "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-java",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
         },
         "parameters": {
           "imports": [
@@ -916,9 +916,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using C",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
-          "runtimeId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.runtime-type-edge-c",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "runtimeId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.runtime-type-edge-c",
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
         },
         "parameters": {
           "imports": [
@@ -1018,9 +1018,9 @@
         "description": "i18n:Template for configuring CI/CD pipeline for Azure IoT Edge App using Python",
         "attributes": {
           "codeRepositoryType": "Sample",
-          "frameworkId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
+          "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
           "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-python",
-          "serviceId": "michaeljqzq.vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
+          "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-existing-edge-device"
         },
         "parameters": {
           "imports": [
