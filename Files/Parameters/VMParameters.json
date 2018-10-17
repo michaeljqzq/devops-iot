@@ -14,7 +14,7 @@
       "inputMode": "TextBox",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "{{{system.projectName}}}-vm",
+      "defaultValue": "vm-a68e",
       "staticValidation": {
         "pattern": "^(?![0-9]*$)[a-zA-Z0-9\\-]+$",
         "errorMessage": "Virtual machine name should be alpha-numeric or '-' and should not be only numeric, less than 16 characters",
@@ -46,7 +46,7 @@
       "inputMode": "PasswordBox",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "{{{system.projectName}}}abcDEF123^$*",
+      "defaultValue": "abcDEF123^$*",
       "staticValidation": {
         "pattern": "^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&/=?_,:;])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&/=?_,:;])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&/=?_,:;])).{12,123}$",
         "errorMessage": "Password must have at least 12 characters and 3 of the following: 1 lowercase character, 1 uppercase character, 1 number, and 1 special character that is not '\\' or '-'.",
@@ -62,7 +62,7 @@
       "inputMode": "PasswordBox",
       "groupId": "virtualMachine",
       "isRequired": true,
-      "defaultValue": "{{{system.projectName}}}abcDEF123^$*",
+      "defaultValue": "abcDEF123^$*",
       "staticValidation": {
         "pattern": "^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&/=?_,:;])|(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&/=?_,:;])|(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&/=?_,:;])).{12,123}$",
         "errorMessage": "Password must have at least 12 characters and 3 of the following: 1 lowercase character, 1 uppercase character, 1 number, and 1 special character that is not '\\' or '-'.",
