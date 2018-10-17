@@ -14,7 +14,7 @@
       "inputMode": "TextBox",
       "groupId": "iotHub",
       "isRequired": true,
-      "defaultValue": "devops-iothub",
+      "defaultValue": "{{{system.projectName}}}-iothub",
       "properties": {
         "attributes": "primary;"
       },

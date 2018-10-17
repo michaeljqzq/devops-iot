@@ -26,10 +26,7 @@
       "inputMode": "TextBox",
       "groupId": "azure",
       "isRequired": true,
-      "defaultValue": "devops-edge-rg",
-      "properties": {
-        "attributes": "primary;"
-      },
+      "defaultValue": "{{{system.projectName}}}-rg",
       "dynamicValidations": [{
         "dataSourceId": "checkResourceGroupAvailability",
         "errorMessage": "Resource group with this name already exists"
