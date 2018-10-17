@@ -20,9 +20,9 @@
       },
       "staticValidation": {
         "pattern": "[a-zA-Z0-9\\-]*",
-        "errorMessage": "The value must contain only alphanumeric characters or the following: - , less than 16 characters",
+        "errorMessage": "IotHub name can contain only alphanumeric and hyphen and must start/end with alphanumeric. Should be 3 to 50 chars long",
         "minLength": 3,
-        "maxLength": 15
+        "maxLength": 50
       },
       "dynamicValidations": [{
         "dataSourceId": "checkIotHubAvailability",
