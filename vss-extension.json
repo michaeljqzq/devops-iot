@@ -66,7 +66,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -104,7 +104,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -122,7 +122,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.vmlocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-linux-vm.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
                     "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" "
                   }
                 ]
@@ -183,7 +183,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -221,7 +221,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -239,7 +239,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.vmlocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-linux-vm.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
                     "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" "
                   }
                 ]
@@ -300,7 +300,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -338,7 +338,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -356,7 +356,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.vmlocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-linux-vm.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
                     "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" "
                   }
                 ]
@@ -417,7 +417,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -455,7 +455,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -473,7 +473,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.vmlocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-linux-vm.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
                     "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" "
                   }
                 ]
@@ -534,7 +534,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -572,7 +572,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -590,7 +590,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.vmlocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-linux-vm.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
                     "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.vmName}}}\" -adminUsername \"{{{inputs.vmUsername}}}\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"{{{inputs.vmSize}}}\" -location \"{{{inputs.vmlocation}}}\" "
                   }
                 ]
@@ -650,7 +650,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -683,7 +683,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -752,7 +752,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -785,7 +785,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -854,7 +854,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -887,7 +887,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -956,7 +956,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -989,7 +989,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
@@ -1059,7 +1059,7 @@
                   "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
-                  "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-acr.json",
+                  "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
@@ -1092,7 +1092,7 @@
                     "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
-                    "csmFileLink": "https://raw.githubusercontent.com/michaeljqzq/devops-iot-sample/arm/arm-iothub.json",
+                    "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
                     "overrideParameters": "-iotHubName {{{inputs.iotHubName}}} -iotHubSku \"{{{inputs.iotHubSku}}}\""
                   },
                   {
