@@ -48,7 +48,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-dotnet",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-dotnet",
               "defaultBranch": "master"
             }
           },
@@ -165,7 +165,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-node",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-node",
               "defaultBranch": "master"
             }
           },
@@ -282,7 +282,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-java",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-java",
               "defaultBranch": "master"
             }
           },
@@ -399,7 +399,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-c",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-c",
               "defaultBranch": "master"
             }
           },
@@ -516,7 +516,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-python",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-python",
               "defaultBranch": "master"
             }
           },
@@ -632,7 +632,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-dotnet",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-dotnet",
               "defaultBranch": "master"
             }
           },
@@ -734,7 +734,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-node",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-node",
               "defaultBranch": "master"
             }
           },
@@ -836,7 +836,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-java",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-java",
               "defaultBranch": "master"
             }
           },
@@ -938,7 +938,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-c",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-c",
               "defaultBranch": "master"
             }
           },
@@ -1041,7 +1041,7 @@
           }],
           "source": {
             "repository": {
-              "id": "https://github.com/VSChina/azure-iot-edge-sample-python",
+              "id": "https://github.com/Azure-Samples/iot-edge-sample-python",
               "defaultBranch": "master"
             }
           },
