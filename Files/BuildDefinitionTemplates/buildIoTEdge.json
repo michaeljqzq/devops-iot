@@ -92,7 +92,7 @@
             "definitionType": "task"
           },
           "inputs": {
-            "PathtoPublish": ".",
+            "PathtoPublish": "config/deployment.json",
             "ArtifactName": "Drop",
             "ArtifactType": "Container",
             "TargetPath": "",

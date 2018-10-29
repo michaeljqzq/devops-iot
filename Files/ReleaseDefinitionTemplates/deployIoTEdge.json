@@ -101,7 +101,7 @@
             "azureSubscriptionEndpoint": "",
             "azureContainerRegistry": "",
             "dockerHostEndpoint": "",
-            "rootPath": "$(System.DefaultWorkingDirectory)/Drop/Drop"
+            "rootPath": "./"
           }
         },
         {
