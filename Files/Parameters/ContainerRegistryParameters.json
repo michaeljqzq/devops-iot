@@ -13,7 +13,7 @@
       "inputMode": "TextBox",
       "groupId": "containerRegistry",
       "isRequired": true,
-      "defaultValue": "acra68e",
+      "defaultValue": "{{{system.projectName}}}acr",
       "staticValidation": {
         "pattern": "[a-zA-Z0-9]*",
         "errorMessage": "Resource names may contain alpha numeric characters only and must be between 5 and 50 characters.",

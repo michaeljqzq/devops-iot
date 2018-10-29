@@ -14,7 +14,7 @@
       "inputMode": "TextBox",
       "groupId": "iotHub",
       "isRequired": true,
-      "defaultValue": "iothub-a68e",
+      "defaultValue": "{{{system.projectName}}}-iothub",
       "properties": {
         "attributes": "primary;"
       },
