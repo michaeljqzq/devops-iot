@@ -83,7 +83,7 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{system.projectName}}}-vm",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
                 "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
               ],
               "variables": {
@@ -122,7 +122,7 @@
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
-                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{system.projectName}}}-vm\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
+                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.iotHubName}}}-edge-simulation\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
                   }
                 ]
               }]
@@ -199,7 +199,7 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{system.projectName}}}-vm",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
                 "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
               ],
               "variables": {
@@ -238,7 +238,7 @@
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
-                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{system.projectName}}}-vm\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
+                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.iotHubName}}}-edge-simulation\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
                   }
                 ]
               }]
@@ -315,7 +315,7 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{system.projectName}}}-vm",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
                 "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
               ],
               "variables": {
@@ -354,7 +354,7 @@
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
-                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{system.projectName}}}-vm\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
+                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.iotHubName}}}-edge-simulation\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
                   }
                 ]
               }]
@@ -431,7 +431,7 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{system.projectName}}}-vm",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
                 "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
               ],
               "variables": {
@@ -470,7 +470,7 @@
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
-                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{system.projectName}}}-vm\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
+                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.iotHubName}}}-edge-simulation\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
                   }
                 ]
               }]
@@ -547,7 +547,7 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{system.projectName}}}-vm",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
                 "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
               ],
               "variables": {
@@ -586,7 +586,7 @@
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
-                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{system.projectName}}}-vm\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
+                    "overrideParameters": "-edgeDeviceConnectionString $(CS_OUTPUT) -virtualMachineName \"{{{inputs.iotHubName}}}-edge-simulation\" -adminUsername \"devops\" -adminPassword \"$(vmPassword)\" -appInsightsLocation \"{{{inputs.appInsightLocation}}}\" -virtualMachineSize \"Standard_A0\" -location \"South Central US\" "
                   }
                 ]
               }]
