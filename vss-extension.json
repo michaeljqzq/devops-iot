@@ -374,7 +374,7 @@
         "attributes": {
           "codeRepositoryType": "Sample",
           "frameworkId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.framework-type-iot-edge",
-          "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-c",
+          "runtimeId": "ms.vss-continuous-delivery-pipeline-templates.runtime-type-edge-c",
           "serviceId": "michaeljqzq.r-vss-continuous-delivery-pipeline-templates.service-type-linux-vm-edge-device"
         },
         "parameters": {
