@@ -3,7 +3,7 @@
   "extensionId": "r-vss-continuous-delivery-pipeline-templates",
   "name": "DevOps for IoT Edge",
   "publisher": "michaeljqzq",
-  "version": "0.1.1",
+  "version": "0.1.31",
   "description": "DevOps for IoT Edge",
   "categories": [
     "Integrate"

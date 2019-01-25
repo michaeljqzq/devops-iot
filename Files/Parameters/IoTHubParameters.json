@@ -1,12 +1,15 @@
 {
-  "groups": [{
-    "id": "iotHub",
-    "name": "IoT Hub of Edge device",
-    "properties": {
-      "context": "service"
+  "groups": [
+    {
+      "id": "iotHub",
+      "name": "IoT Hub of Edge device",
+      "properties": {
+        "context": "service"
+      }
     }
-  }],
-  "inputs": [{
+  ],
+  "inputs": [
+    {
       "id": "iotHubName",
       "type": "string",
       "description": "Name of IoT Hub to be created",
@@ -20,14 +23,16 @@
       },
       "staticValidation": {
         "pattern": "[a-zA-Z0-9\\-]*",
-        "errorMessage": "IotHub name can contain only alphanumeric and hyphen and must start/end with alphanumeric. Should be 3 to 50 chars long",
+        "errorMessage": "IoT Hub name can contain only alphanumeric and hyphen and must start/end with alphanumeric. Should be 3 to 50 chars long",
         "minLength": 3,
         "maxLength": 50
       },
-      "dynamicValidations": [{
-        "dataSourceId": "checkIotHubAvailability",
-        "errorMessage": "IoT Hub with this name already exists"
-      }]
+      "dynamicValidations": [
+        {
+          "dataSourceId": "checkIotHubAvailability",
+          "errorMessage": "IoT Hub with this name already exists"
+        }
+      ]
     },
     {
       "id": "iotHubSku",
@@ -37,7 +42,8 @@
       "inputMode": "Combo",
       "groupId": "iotHub",
       "isRequired": true,
-      "possibleValues": [{
+      "possibleValues": [
+        {
           "value": "S1",
           "displayValue": "S1 Standard"
         },
@@ -68,7 +74,8 @@
       ],
       "defaultValue": "S1",
       "properties": {
-        "attributes": "summarizable;"
+        "attributes": "summarizable;",
+        "summaryText": "{{{inputs.iotHubSku}}}"
       }
     },
     {
@@ -80,10 +87,14 @@
       "groupId": "iotHub",
       "isRequired": true,
       "dataSourceId": "iotHubLocations",
-      "defaultValue": "South Central US"
+      "defaultValue": "South Central US",
+      "properties": {
+        "attributes": "primary;"
+      }
     }
   ],
-  "dataSources": [{
+  "dataSources": [
+    {
       "id": "iotHubLocations",
       "endpointUrlStem": "/subscriptions/{{{inputs.subscriptionId}}}/providers/Microsoft.Devices?api-version=2018-02-01",
       "resultSelector": "$.resourceTypes[?(@.resourceType === 'IotHubs')].locations"
