@@ -3,10 +3,10 @@
   "extensionId": "r-vss-continuous-delivery-pipeline-templates",
   "name": "DevOps for IoT Edge",
   "publisher": "michaeljqzq",
-  "version": "0.1.1",
+  "version": "0.1.25",
   "description": "DevOps for IoT Edge",
   "categories": [
-    "Integrate"
+    "Azure Artifacts"
   ],
   "targets": [{
     "id": "Microsoft.VisualStudio.Services"
@@ -38,7 +38,7 @@
         },
         "configuration": {
           "assets": [{
-            "id": "ARMResourceGroup",
+            "id": "ARMEndpoint",
             "type": "endpoint:AzureRM",
             "inputs": {
               "subscriptionId": "{{inputs.subscriptionId}}",
@@ -62,15 +62,18 @@
             "phaseInputs": [{
               "taskInputs": [{
                   "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                  "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                  "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
                   "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
                   "overrideParameters": "-registryName {{{inputs.containerRegistryName}}} -registrySku \"{{{inputs.containerRegistrySKU}}}\" -registryLocation \"{{{inputs.containerRegistryLocation}}}\""
                 },
                 {
+                  "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8"
+                },
+                {
                   "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                  "azureSubscriptionEndpoint": "{{{assets.ARMResourceGroup}}}",
+                  "azureSubscriptionEndpoint": "{{{assets.ARMEndpoint}}}",
                   "azureContainerRegistry": "{\"loginServer\":\"{{{inputs.containerRegistryName}}}.azurecr.io\", \"id\" : \"/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.ContainerRegistry/registries/{{{inputs.containerRegistryName}}}\"}"
                 },
                 {
@@ -88,7 +91,7 @@
               ],
               "variables": {
                 "vmPassword": {
-                  "value": "{{{system.projectName}}}abcDEF123^$*",
+                  "value": "{{{#generateRandomPassword}}}{{{/generateRandomPassword}}}",
                   "isSecret": true
                 },
                 "DEVOPS_IOTEDGE_REGISTRY_URL": {
@@ -100,7 +103,7 @@
                 "queue": "hostedlinux",
                 "taskInputs": [{
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
@@ -108,17 +111,17 @@
                   },
                   {
                     "__TaskId__": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "inlineScript": "(az extension add --name azure-cli-iot-ext && az iot hub device-identity show --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}}) || (az iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled && TMP_OUTPUT=\"$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}})\" && RE=\"\\\"cs\\\":\\s?\\\"(.*)\\\"\" && if [[ $TMP_OUTPUT =~ $RE ]]; then CS_OUTPUT=${BASH_REMATCH[1]}; fi && echo \"##vso[task.setvariable variable=CS_OUTPUT]${CS_OUTPUT}\")"
                   },
                   {
                     "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "iothubname": "{{inputs.iotHubName}}"
                   },
                   {
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
@@ -154,7 +157,7 @@
         },
         "configuration": {
           "assets": [{
-            "id": "ARMResourceGroup",
+            "id": "ARMEndpoint",
             "type": "endpoint:AzureRM",
             "inputs": {
               "subscriptionId": "{{inputs.subscriptionId}}",
@@ -178,7 +181,7 @@
             "phaseInputs": [{
               "taskInputs": [{
                   "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                  "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                  "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
                   "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
@@ -186,7 +189,7 @@
                 },
                 {
                   "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                  "azureSubscriptionEndpoint": "{{{assets.ARMResourceGroup}}}",
+                  "azureSubscriptionEndpoint": "{{{assets.ARMEndpoint}}}",
                   "azureContainerRegistry": "{\"loginServer\":\"{{{inputs.containerRegistryName}}}.azurecr.io\", \"id\" : \"/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.ContainerRegistry/registries/{{{inputs.containerRegistryName}}}\"}"
                 },
                 {
@@ -216,7 +219,7 @@
                 "queue": "hostedlinux",
                 "taskInputs": [{
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
@@ -224,17 +227,17 @@
                   },
                   {
                     "__TaskId__": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "inlineScript": "(az extension add --name azure-cli-iot-ext && az iot hub device-identity show --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}}) || (az iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled && TMP_OUTPUT=\"$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}})\" && RE=\"\\\"cs\\\":\\s?\\\"(.*)\\\"\" && if [[ $TMP_OUTPUT =~ $RE ]]; then CS_OUTPUT=${BASH_REMATCH[1]}; fi && echo \"##vso[task.setvariable variable=CS_OUTPUT]${CS_OUTPUT}\")"
                   },
                   {
                     "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "iothubname": "{{inputs.iotHubName}}"
                   },
                   {
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
@@ -270,7 +273,7 @@
         },
         "configuration": {
           "assets": [{
-            "id": "ARMResourceGroup",
+            "id": "ARMEndpoint",
             "type": "endpoint:AzureRM",
             "inputs": {
               "subscriptionId": "{{inputs.subscriptionId}}",
@@ -294,7 +297,7 @@
             "phaseInputs": [{
               "taskInputs": [{
                   "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                  "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                  "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
                   "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
@@ -302,7 +305,7 @@
                 },
                 {
                   "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                  "azureSubscriptionEndpoint": "{{{assets.ARMResourceGroup}}}",
+                  "azureSubscriptionEndpoint": "{{{assets.ARMEndpoint}}}",
                   "azureContainerRegistry": "{\"loginServer\":\"{{{inputs.containerRegistryName}}}.azurecr.io\", \"id\" : \"/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.ContainerRegistry/registries/{{{inputs.containerRegistryName}}}\"}"
                 },
                 {
@@ -332,7 +335,7 @@
                 "queue": "hostedlinux",
                 "taskInputs": [{
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
@@ -340,17 +343,17 @@
                   },
                   {
                     "__TaskId__": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "inlineScript": "(az extension add --name azure-cli-iot-ext && az iot hub device-identity show --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}}) || (az iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled && TMP_OUTPUT=\"$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}})\" && RE=\"\\\"cs\\\":\\s?\\\"(.*)\\\"\" && if [[ $TMP_OUTPUT =~ $RE ]]; then CS_OUTPUT=${BASH_REMATCH[1]}; fi && echo \"##vso[task.setvariable variable=CS_OUTPUT]${CS_OUTPUT}\")"
                   },
                   {
                     "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "iothubname": "{{inputs.iotHubName}}"
                   },
                   {
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
@@ -386,7 +389,7 @@
         },
         "configuration": {
           "assets": [{
-            "id": "ARMResourceGroup",
+            "id": "ARMEndpoint",
             "type": "endpoint:AzureRM",
             "inputs": {
               "subscriptionId": "{{inputs.subscriptionId}}",
@@ -410,7 +413,7 @@
             "phaseInputs": [{
               "taskInputs": [{
                   "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                  "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                  "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
                   "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
@@ -418,7 +421,7 @@
                 },
                 {
                   "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                  "azureSubscriptionEndpoint": "{{{assets.ARMResourceGroup}}}",
+                  "azureSubscriptionEndpoint": "{{{assets.ARMEndpoint}}}",
                   "azureContainerRegistry": "{\"loginServer\":\"{{{inputs.containerRegistryName}}}.azurecr.io\", \"id\" : \"/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.ContainerRegistry/registries/{{{inputs.containerRegistryName}}}\"}"
                 },
                 {
@@ -448,7 +451,7 @@
                 "queue": "hostedlinux",
                 "taskInputs": [{
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
@@ -456,17 +459,17 @@
                   },
                   {
                     "__TaskId__": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "inlineScript": "(az extension add --name azure-cli-iot-ext && az iot hub device-identity show --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}}) || (az iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled && TMP_OUTPUT=\"$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}})\" && RE=\"\\\"cs\\\":\\s?\\\"(.*)\\\"\" && if [[ $TMP_OUTPUT =~ $RE ]]; then CS_OUTPUT=${BASH_REMATCH[1]}; fi && echo \"##vso[task.setvariable variable=CS_OUTPUT]${CS_OUTPUT}\")"
                   },
                   {
                     "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "iothubname": "{{inputs.iotHubName}}"
                   },
                   {
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",
@@ -502,7 +505,7 @@
         },
         "configuration": {
           "assets": [{
-            "id": "ARMResourceGroup",
+            "id": "ARMEndpoint",
             "type": "endpoint:AzureRM",
             "inputs": {
               "subscriptionId": "{{inputs.subscriptionId}}",
@@ -526,7 +529,7 @@
             "phaseInputs": [{
               "taskInputs": [{
                   "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                  "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                  "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                   "resourceGroupName": "{{{inputs.resourceGroup}}}",
                   "location": "{{{inputs.containerRegistryLocation}}}",
                   "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-acr.json",
@@ -534,7 +537,7 @@
                 },
                 {
                   "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                  "azureSubscriptionEndpoint": "{{{assets.ARMResourceGroup}}}",
+                  "azureSubscriptionEndpoint": "{{{assets.ARMEndpoint}}}",
                   "azureContainerRegistry": "{\"loginServer\":\"{{{inputs.containerRegistryName}}}.azurecr.io\", \"id\" : \"/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.ContainerRegistry/registries/{{{inputs.containerRegistryName}}}\"}"
                 },
                 {
@@ -564,7 +567,7 @@
                 "queue": "hostedlinux",
                 "taskInputs": [{
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "{{{inputs.iotHubLocation}}}",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-iothub.json",
@@ -572,17 +575,17 @@
                   },
                   {
                     "__TaskId__": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "inlineScript": "(az extension add --name azure-cli-iot-ext && az iot hub device-identity show --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}}) || (az iot hub device-identity create --hub-name {{{inputs.iotHubName}}} --device-id myEdgeDevice --edge-enabled && TMP_OUTPUT=\"$(az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {{{inputs.iotHubName}}})\" && RE=\"\\\"cs\\\":\\s?\\\"(.*)\\\"\" && if [[ $TMP_OUTPUT =~ $RE ]]; then CS_OUTPUT=${BASH_REMATCH[1]}; fi && echo \"##vso[task.setvariable variable=CS_OUTPUT]${CS_OUTPUT}\")"
                   },
                   {
                     "__TaskId__": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-                    "connectedServiceNameARM": "{{{assets.ARMResourceGroup}}}",
+                    "connectedServiceNameARM": "{{{assets.ARMEndpoint}}}",
                     "iothubname": "{{inputs.iotHubName}}"
                   },
                   {
                     "__TaskId__": "94a74903-f93f-4075-884f-dc11f34058b4",
-                    "ConnectedServiceName": "{{{assets.ARMResourceGroup}}}",
+                    "ConnectedServiceName": "{{{assets.ARMEndpoint}}}",
                     "ResourceGroupName": "{{{inputs.resourceGroup}}}",
                     "location": "South Central US",
                     "csmFileLink": "https://raw.githubusercontent.com/Azure-Samples/devops-iot-scripts/arm/arm-linux-vm.json",

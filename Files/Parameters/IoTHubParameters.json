@@ -9,7 +9,7 @@
   "inputs": [{
       "id": "iotHubName",
       "type": "string",
-      "description": "Name of IoT Hub to be created",
+      "description": "Name of 113IoT Hub to be created",
       "Name": "IoT Hub name",
       "inputMode": "TextBox",
       "groupId": "iotHub",

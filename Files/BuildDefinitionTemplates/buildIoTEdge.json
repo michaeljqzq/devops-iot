@@ -51,31 +51,45 @@
           "enabled": true,
           "continueOnError": false,
           "alwaysRun": false,
-          "displayName": "Azure IoT Edge - Build and Push modules",
+          "displayName": "Azure IoT Edge - Build module images",
           "timeoutInMinutes": 0,
           "condition": "succeeded()",
           "task": {
             "id": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-            "versionSpec": "1.*",
+            "versionSpec": "2.*",
             "definitionType": "task"
           },
           "inputs": {
-            "action": "Build and Push modules",
+            "action": "Build module images",
             "connectedServiceNameARM": "",
-            "iothubname": "",
-            "deploymentid": "devops-iotedge-deployment",
-            "priority": "0",
-            "deviceOption": "",
-            "deviceId": "",
-            "targetcondition": "",
-            "moduleJsons": "**/module.json",
+            "templateFilePath": "deployment.template.json",
+            "defaultPlatform": "amd64",
+            "bypassModules": ""
+          }
+        },
+        {
+          "environment": {},
+          "enabled": true,
+          "continueOnError": false,
+          "alwaysRun": false,
+          "displayName": "Azure IoT Edge - Push module images",
+          "timeoutInMinutes": 0,
+          "condition": "succeeded()",
+          "task": {
+            "id": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
+            "versionSpec": "2.*",
+            "definitionType": "task"
+          },
+          "inputs": {
+            "action": "Push module images",
+            "connectedServiceNameARM": "",
             "containerregistrytype": "Azure Container Registry",
-            "nugetFeed": "",
             "dockerRegistryEndpoint": "",
             "azureSubscriptionEndpoint": "",
             "azureContainerRegistry": "",
-            "dockerHostEndpoint": "",
-            "rootPath": "./"
+            "templateFilePath": "deployment.template.json",
+            "defaultPlatform": "amd64",
+            "bypassModules": ""
           }
         },
         {
@@ -92,7 +106,7 @@
             "definitionType": "task"
           },
           "inputs": {
-            "PathtoPublish": "config/deployment.json",
+            "PathtoPublish": "$(Build.ArtifactStagingDirectory)/deployment.amd64.json",
             "ArtifactName": "Drop",
             "ArtifactType": "Container",
             "TargetPath": "",

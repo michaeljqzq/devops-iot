@@ -77,7 +77,7 @@
         },
         {
           "taskId": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-          "version": "1.*",
+          "version": "2.*",
           "definitionType": "task",
           "enabled": true,
           "continueOnError": false,
@@ -87,21 +87,14 @@
           "condition": "succeeded()",
           "inputs": {
             "action": "Deploy to IoT Edge devices",
+            "deploymentFilePath": "$(System.DefaultWorkingDirectory)/**/*.json",
             "connectedServiceNameARM": "",
             "iothubname": "",
-            "deploymentid": "devops-iotedge-deployment",
+            "deploymentid": "$(System.TeamProject)-devops-deployment",
             "priority": "0",
             "deviceOption": "Single Device",
             "deviceId": "myEdgeDevice",
-            "targetcondition": "",
-            "moduleJsons": "**/module.json",
-            "containerregistrytype": "Azure Container Registry",
-            "nugetFeed": "",
-            "dockerRegistryEndpoint": "",
-            "azureSubscriptionEndpoint": "",
-            "azureContainerRegistry": "",
-            "dockerHostEndpoint": "",
-            "rootPath": "./"
+            "targetcondition": ""
           }
         },
         {
