@@ -77,7 +77,7 @@
         },
         {
           "taskId": "80f3f6a0-82a6-4a22-ba7a-e5b8c541b9b8",
-          "version": "1.*",
+          "version": "2.*",
           "definitionType": "task",
           "enabled": true,
           "continueOnError": false,
