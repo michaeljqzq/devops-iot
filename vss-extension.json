@@ -3,7 +3,7 @@
   "extensionId": "r-vss-continuous-delivery-pipeline-templates",
   "name": "DevOps for IoT Edge",
   "publisher": "michaeljqzq",
-  "version": "0.1.25",
+  "version": "0.1.1",
   "description": "DevOps for IoT Edge",
   "categories": [
     "Azure Artifacts"
@@ -86,8 +86,8 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
-                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
+                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation"
               ],
               "variables": {
                 "vmPassword": {
@@ -202,8 +202,8 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
-                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
+                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation"
               ],
               "variables": {
                 "vmPassword": {
@@ -318,8 +318,8 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
-                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
+                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation"
               ],
               "variables": {
                 "vmPassword": {
@@ -434,8 +434,8 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
-                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
+                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation"
               ],
               "variables": {
                 "vmPassword": {
@@ -550,8 +550,8 @@
             "environments": [{
               "name": "dev",
               "deployedResourceIds": [
-                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation",
-                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}"
+                "/subscriptions/{{{inputs.subscriptionId}}}/resourceGroups/{{{inputs.resourceGroup}}}/providers/Microsoft.Devices/IotHubs/{{{inputs.iotHubName}}}",
+                "/subscriptions/{{inputs.subscriptionId}}/resourceGroups/{{inputs.resourceGroup}}/providers/Microsoft.Compute/virtualMachines/{{{inputs.iotHubName}}}-edge-simulation"
               ],
               "variables": {
                 "vmPassword": {
